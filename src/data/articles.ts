@@ -39,7 +39,7 @@ If you're drawn to meaningful work with strong income potential, financial plann
     author: "David Townsend",
     category: "Career Growth",
     readTime: 4,
-    image: "/images/blog/article-1.svg",
+    image: "/images/blog/article-1.jpg",
   },
   {
     slug: "five-traits-of-successful-financial-advisors",
@@ -86,7 +86,7 @@ If you recognize these traits in yourself, you might be a great fit for financia
     author: "Leslie Freitag",
     category: "Career Growth",
     readTime: 5,
-    image: "/images/blog/article-2.svg",
+    image: "/images/blog/article-2.jpg",
   },
   {
     slug: "what-to-expect-in-your-first-year-as-a-financial-advisor",
@@ -135,7 +135,7 @@ At Bedrock, we've designed our entire onboarding process to give you the best po
     author: "Hannah Townsend",
     category: "Training & Development",
     readTime: 5,
-    image: "/images/blog/article-3.svg",
+    image: "/images/blog/article-3.jpg",
   },
   {
     slug: "the-mentorship-advantage-why-guidance-matters-in-financial-planning",
@@ -195,7 +195,7 @@ If mentorship matters to you, and it should, we'd love to show you how Bedrock's
     author: "David Townsend",
     category: "Training & Development",
     readTime: 5,
-    image: "/images/blog/article-4.svg",
+    image: "/images/blog/article-4.jpg",
   },
   {
     slug: "career-changers-welcome-transferable-skills-for-financial-planning",
@@ -270,7 +270,7 @@ Ready to explore whether your background is a fit? Let's have a conversation.`,
     author: "Leslie Freitag",
     category: "Career Growth",
     readTime: 5,
-    image: "/images/blog/article-5.svg",
+    image: "/images/blog/article-5.jpg",
   },
   {
     slug: "understanding-compensation-models-in-financial-planning",
@@ -349,7 +349,7 @@ Whatever the model, successful financial advisors build substantial income over 
     author: "David Townsend",
     category: "Financial Planning",
     readTime: 6,
-    image: "/images/blog/article-6.svg",
+    image: "/images/blog/article-6.jpg",
   },
   {
     slug: "building-your-client-base-from-scratch",
@@ -416,7 +416,7 @@ At Bedrock, we provide structured support for client acquisition including leads
     author: "Hannah Townsend",
     category: "Career Growth",
     readTime: 6,
-    image: "/images/blog/article-7.svg",
+    image: "/images/blog/article-7.jpg",
   },
   {
     slug: "the-role-of-technology-in-modern-financial-planning",
@@ -480,7 +480,7 @@ The future belongs to advisors who combine technological fluency with deep human
     author: "David Townsend",
     category: "Industry Insights",
     readTime: 5,
-    image: "/images/blog/article-8.svg",
+    image: "/images/blog/article-8.jpg",
   },
   {
     slug: "work-life-balance-in-financial-planning-myth-or-reality",
@@ -535,7 +535,7 @@ If work-life balance is important to you, it should be a key factor in choosing 
     author: "Leslie Freitag",
     category: "Work-Life Balance",
     readTime: 5,
-    image: "/images/blog/article-9.svg",
+    image: "/images/blog/article-9.jpg",
   },
   {
     slug: "how-financial-advisors-make-a-real-difference-in-peoples-lives",
@@ -590,7 +590,7 @@ At Bedrock, we train our advisors to be holistic planners who put clients' lives
     author: "Hannah Townsend",
     category: "Client Success",
     readTime: 6,
-    image: "/images/blog/article-10.svg",
+    image: "/images/blog/article-10.jpg",
   },
   {
     slug: "the-financial-planning-industry-in-2025-trends-and-opportunities",
@@ -651,7 +651,7 @@ At Bedrock, we've been positioning ourselves at the forefront of these trends fo
     author: "David Townsend",
     category: "Industry Insights",
     readTime: 6,
-    image: "/images/blog/article-11.svg",
+    image: "/images/blog/article-11.jpg",
   },
   {
     slug: "how-to-prepare-for-your-financial-advisor-interview",
@@ -723,7 +723,7 @@ If you're preparing for an interview with us or any other firm, take the time to
     author: "Leslie Freitag",
     category: "Career Growth",
     readTime: 6,
-    image: "/images/blog/article-12.svg",
+    image: "/images/blog/article-12.jpg",
   },
   {
     slug: "the-importance-of-professional-designations-in-financial-planning",
@@ -795,7 +795,7 @@ The ideal approach combines **technical credentials** with **practical excellenc
     author: "David Townsend",
     category: "Training & Development",
     readTime: 5,
-    image: "/images/blog/article-13.svg",
+    image: "/images/blog/article-13.jpg",
   },
   {
     slug: "navigating-market-volatility-how-advisors-add-value-when-it-matters-most",
@@ -855,7 +855,7 @@ When someone asks you, "What does a financial advisor actually do?", the answer 
     author: "Hannah Townsend",
     category: "Financial Planning",
     readTime: 6,
-    image: "/images/blog/article-14.svg",
+    image: "/images/blog/article-14.jpg",
   },
   {
     slug: "building-a-referral-based-practice-the-ultimate-growth-strategy",
@@ -920,7 +920,7 @@ At Bedrock, we coach our advisors on referral strategies from day one. We believ
     author: "Leslie Freitag",
     category: "Client Success",
     readTime: 6,
-    image: "/images/blog/article-15.svg",
+    image: "/images/blog/article-15.jpg",
   },
   {
     slug: "the-power-of-financial-literacy-why-education-is-our-mission",
@@ -986,7 +986,7 @@ At Bedrock, we provide our advisors with educational resources, workshop materia
     author: "David Townsend",
     category: "Financial Planning",
     readTime: 6,
-    image: "/images/blog/article-16.svg",
+    image: "/images/blog/article-16.jpg",
   },
   {
     slug: "from-solo-advisor-to-team-leader-growing-your-practice",
@@ -1067,7 +1067,7 @@ Building a team is one of the most rewarding evolutions in a financial advisor's
     author: "Hannah Townsend",
     category: "Career Growth",
     readTime: 7,
-    image: "/images/blog/article-17.svg",
+    image: "/images/blog/article-17.jpg",
   },
   {
     slug: "the-ethics-of-financial-advice-putting-clients-first",
@@ -1132,7 +1132,7 @@ When you join Bedrock, you join a culture where doing the right thing is celebra
     author: "David Townsend",
     category: "Financial Planning",
     readTime: 6,
-    image: "/images/blog/article-18.svg",
+    image: "/images/blog/article-18.jpg",
   },
   {
     slug: "managing-stress-and-avoiding-burnout-in-financial-services",
@@ -1201,7 +1201,7 @@ Your career is a marathon. Treat it like one. At Bedrock, we want you to be as e
     author: "Leslie Freitag",
     category: "Work-Life Balance",
     readTime: 6,
-    image: "/images/blog/article-19.svg",
+    image: "/images/blog/article-19.jpg",
   },
   {
     slug: "serving-diverse-communities-expanding-your-impact-as-an-advisor",
@@ -1265,7 +1265,7 @@ If you're passionate about making financial planning accessible to everyone, not
     author: "Hannah Townsend",
     category: "Industry Insights",
     readTime: 6,
-    image: "/images/blog/article-20.svg",
+    image: "/images/blog/article-20.jpg",
   },
   {
     slug: "the-art-of-the-financial-plan-presentation",
@@ -1331,7 +1331,7 @@ At Bedrock, we provide extensive coaching on plan presentation skills because we
     author: "David Townsend",
     category: "Client Success",
     readTime: 7,
-    image: "/images/blog/article-21.svg",
+    image: "/images/blog/article-21.jpg",
   },
   {
     slug: "why-company-culture-matters-when-choosing-a-financial-planning-firm",
@@ -1407,7 +1407,7 @@ We know these sound like values on a poster. The difference is we live them dail
     author: "Leslie Freitag",
     category: "Work-Life Balance",
     readTime: 6,
-    image: "/images/blog/article-22.svg",
+    image: "/images/blog/article-22.jpg",
   },
   {
     slug: "planning-for-the-future-succession-and-legacy-in-financial-planning",
@@ -1497,7 +1497,7 @@ Your career in financial planning can be the most valuable thing you ever build.
     author: "Hannah Townsend",
     category: "Industry Insights",
     readTime: 7,
-    image: "/images/blog/article-23.svg",
+    image: "/images/blog/article-23.jpg",
   },
   {
     slug: "your-next-chapter-starts-here-joining-bedrock-financial-planning",
@@ -1577,6 +1577,6 @@ Reach out to our recruiting team to schedule your initial conversation. We look 
     author: "David Townsend",
     category: "Career Growth",
     readTime: 7,
-    image: "/images/blog/article-24.svg",
+    image: "/images/blog/article-24.jpg",
   },
 ];
