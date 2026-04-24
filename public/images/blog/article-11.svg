@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg-grad-11" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C4AD8A"/>
+      <stop offset="100%" stop-color="#997F5F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="8" fill="url(#bg-grad-11)"/>
+
+  <!-- Pattern decoration -->
+  <rect x="50" y="350" width="60" height="120" fill="#143A20" opacity="0.06"/>
+      <rect x="130" y="300" width="60" height="170" fill="#143A20" opacity="0.07"/>
+      <rect x="210" y="260" width="60" height="210" fill="#143A20" opacity="0.08"/>
+      <rect x="290" y="220" width="60" height="250" fill="#143A20" opacity="0.09"/>
+      <rect x="370" y="280" width="60" height="190" fill="#143A20" opacity="0.07"/>
+      <rect x="450" y="310" width="60" height="160" fill="#143A20" opacity="0.06"/>
+      <rect x="530" y="250" width="60" height="220" fill="#143A20" opacity="0.08"/>
+      <rect x="610" y="200" width="60" height="270" fill="#143A20" opacity="0.09"/>
+      <rect x="690" y="270" width="60" height="200" fill="#143A20" opacity="0.07"/>
+
+  <!-- Article number label -->
+  <text x="400" y="235" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="400" fill="#0B2412" letter-spacing="4" opacity="0.15">11</text>
+
+  <!-- Decorative line -->
+  <line x1="320" y1="260" x2="480" y2="260" stroke="#143A20" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- "Article" label -->
+  <text x="400" y="290" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#0B2412" letter-spacing="6" opacity="0.35">ARTICLE</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="488" width="800" height="12" rx="0 0 8 8" fill="#143A20" opacity="0.15"/>
+</svg>

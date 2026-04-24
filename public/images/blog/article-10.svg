@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg-grad-10" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B8A07E"/>
+      <stop offset="100%" stop-color="#6B5A43"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="8" fill="url(#bg-grad-10)"/>
+
+  <!-- Pattern decoration -->
+  <polygon points="620,150 680,115 740,150 740,210 680,245 620,210" fill="none" stroke="#0B2412" stroke-width="1.5" opacity="0.1"/>
+      <polygon points="635,155 675,125 725,155 725,205 675,235 635,205" fill="#0B2412" opacity="0.04"/>
+      <polygon points="100,300 160,265 220,300 220,360 160,395 100,360" fill="none" stroke="#0B2412" stroke-width="1" opacity="0.07"/>
+      <polygon points="380,380 420,360 460,380 460,420 420,440 380,420" fill="none" stroke="#0B2412" stroke-width="0.8" opacity="0.06"/>
+
+  <!-- Article number label -->
+  <text x="400" y="235" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="400" fill="#0B2412" letter-spacing="4" opacity="0.15">10</text>
+
+  <!-- Decorative line -->
+  <line x1="320" y1="260" x2="480" y2="260" stroke="#0B2412" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- "Article" label -->
+  <text x="400" y="290" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" fill="#0B2412" letter-spacing="6" opacity="0.35">ARTICLE</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="488" width="800" height="12" rx="0 0 8 8" fill="#0B2412" opacity="0.15"/>
+</svg>
