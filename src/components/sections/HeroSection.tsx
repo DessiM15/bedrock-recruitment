@@ -2,20 +2,40 @@
 
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
-import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import Image from "next/image";
+
+const HERO_VIDEO_URL = process.env.NEXT_PUBLIC_HERO_VIDEO_URL;
 
 export function HeroSection() {
   return (
     <div id="hero" className="hero-sticky h-screen w-full">
-      <ParallaxImage
-        src="/images/hero/hero-bg.svg"
-        alt="Professional financial planning lifestyle"
-        speed={0.3}
-        className="absolute inset-0"
-        overlay
-        overlayOpacity={0.55}
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        {HERO_VIDEO_URL ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover"
+            poster="/images/hero/hero-bg.svg"
+          >
+            <source src={HERO_VIDEO_URL} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src="/images/hero/hero-bg.svg"
+            alt="Professional financial planning lifestyle"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        )}
+        <div
+          className="absolute inset-0 bg-dark-green"
+          style={{ opacity: 0.55 }}
+        />
+      </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <motion.div
