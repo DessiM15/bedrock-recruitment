@@ -18,7 +18,7 @@ export function WhyBedrockSection() {
           className="relative aspect-[4/5] overflow-hidden rounded-lg"
         >
           <Image
-            src="/images/hero/why-bedrock.svg"
+            src="/images/hero/why-bedrock.jpg"
             alt="Financial advisor helping a family with their plans"
             fill
             className="object-cover"
