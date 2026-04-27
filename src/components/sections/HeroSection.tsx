@@ -43,7 +43,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-4xl font-serif text-4xl font-light leading-tight text-white md:text-6xl lg:text-7xl"
+          className="max-w-5xl font-sans text-5xl font-black uppercase leading-none tracking-tight text-white md:text-7xl lg:text-8xl"
         >
           Your Dream Life
           <br />
@@ -54,7 +54,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-6 max-w-xl text-lg font-light text-white/90 md:text-xl"
+          className="mt-6 max-w-xl text-lg font-medium text-white/90 md:text-xl"
         >
           Imagine waking up tomorrow with a brand new business — your very own,
           up and running for you. No experience necessary.

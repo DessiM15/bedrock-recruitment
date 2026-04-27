@@ -5,15 +5,15 @@ import { Palette } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const themes = [
-  { id: "sunset", label: "Sunset Energy", color: "#FF6B6B" },
-  { id: "bold", label: "Bold Ambition", color: "#FF6D00" },
-  { id: "fresh", label: "Fresh Momentum", color: "#00B894" },
+  { id: "electric", label: "Electric Red", color: "#FF2D2D" },
+  { id: "neon", label: "Neon Orange", color: "#FF5500" },
+  { id: "hotpink", label: "Hot Pink", color: "#FF0055" },
 ] as const;
 
 type ThemeId = (typeof themes)[number]["id"];
 
 export function ThemeSwitcher() {
-  const [active, setActive] = useState<ThemeId>("sunset");
+  const [active, setActive] = useState<ThemeId>("electric");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export function ThemeSwitcher() {
       setActive(saved);
       document.documentElement.setAttribute("data-theme", saved);
     } else {
-      document.documentElement.setAttribute("data-theme", "sunset");
+      document.documentElement.setAttribute("data-theme", "electric");
     }
     setMounted(true);
   }, []);

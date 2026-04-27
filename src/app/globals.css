@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-tan: #FF6B6B;
-  --color-tan-light: #FF8E8E;
-  --color-tan-dark: #E55A5A;
-  --color-dark-green: #1A535C;
-  --color-dark-green-light: #2A6B75;
-  --color-cream: #FFFAFA;
-  --color-cream-dark: #FFF0F0;
+@theme {
+  --color-tan: #FF2D2D;
+  --color-tan-light: #FF5252;
+  --color-tan-dark: #E02020;
+  --color-dark-green: #0A0A0A;
+  --color-dark-green-light: #1A1A1A;
+  --color-cream: #FFFFFF;
+  --color-cream-dark: #F5F5F5;
   --color-white: #ffffff;
 
   --font-serif: var(--font-playfair);
@@ -86,35 +86,35 @@ textarea:focus {
 
 /* ===== Theme Overrides ===== */
 
-/* Theme 1: Sunset Energy (Coral + Teal) — DEFAULT (matches @theme inline above) */
-[data-theme="sunset"] {
-  --color-tan: #FF6B6B;
-  --color-tan-light: #FF8E8E;
-  --color-tan-dark: #E55A5A;
-  --color-dark-green: #1A535C;
-  --color-dark-green-light: #2A6B75;
-  --color-cream: #FFFAFA;
-  --color-cream-dark: #FFF0F0;
+/* Theme 1: Electric Red — DEFAULT (matches @theme above) */
+[data-theme="electric"] {
+  --color-tan: #FF2D2D;
+  --color-tan-light: #FF5252;
+  --color-tan-dark: #E02020;
+  --color-dark-green: #0A0A0A;
+  --color-dark-green-light: #1A1A1A;
+  --color-cream: #FFFFFF;
+  --color-cream-dark: #F5F5F5;
 }
 
-/* Theme 2: Bold Ambition (Electric Orange + Navy) */
-[data-theme="bold"] {
-  --color-tan: #FF6D00;
-  --color-tan-light: #FF8A33;
-  --color-tan-dark: #E56200;
-  --color-dark-green: #1B2A4A;
-  --color-dark-green-light: #2A3D66;
-  --color-cream: #FFFAF5;
-  --color-cream-dark: #FFF3E8;
+/* Theme 2: Neon Orange + Deep Purple */
+[data-theme="neon"] {
+  --color-tan: #FF5500;
+  --color-tan-light: #FF7733;
+  --color-tan-dark: #E04A00;
+  --color-dark-green: #1A0A2E;
+  --color-dark-green-light: #2A1A3E;
+  --color-cream: #FAFAFA;
+  --color-cream-dark: #F0F0F0;
 }
 
-/* Theme 3: Fresh Momentum (Emerald + Charcoal) */
-[data-theme="fresh"] {
-  --color-tan: #00B894;
-  --color-tan-light: #33C9A8;
-  --color-tan-dark: #009D7E;
-  --color-dark-green: #2D3436;
-  --color-dark-green-light: #3D4446;
-  --color-cream: #FFF9F0;
-  --color-cream-dark: #FFF0DD;
+/* Theme 3: Hot Pink-Red + Navy */
+[data-theme="hotpink"] {
+  --color-tan: #FF0055;
+  --color-tan-light: #FF3377;
+  --color-tan-dark: #E00048;
+  --color-dark-green: #1A1A2E;
+  --color-dark-green-light: #2A2A3E;
+  --color-cream: #FFFFFF;
+  --color-cream-dark: #F5F0F5;
 }
