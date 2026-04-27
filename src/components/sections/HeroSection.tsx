@@ -16,7 +16,7 @@ export function HeroSection() {
           className="h-full w-full object-cover"
           poster="/images/hero/hero-bg.svg"
         >
-          <source src="/images/hero/bech-hero.mp4" type="video/mp4" />
+          <source src="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/bech-hero.mp4" type="video/mp4" />
         </video>
         <div
           className="absolute inset-0 bg-tan/70"
