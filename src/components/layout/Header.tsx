@@ -12,7 +12,7 @@ const navLinks = [
   { href: "/#benefits", label: "Benefits" },
   { href: "/#team", label: "Team" },
   { href: "/blog", label: "Blog" },
-  { href: "/#contact", label: "Apply Now" },
+  { href: "/#contact", label: "Book Your Free Call" },
 ];
 
 export function Header() {
@@ -60,8 +60,8 @@ export function Header() {
               href={link.href}
               className={cn(
                 "text-sm font-medium tracking-wide transition-colors duration-200",
-                link.label === "Apply Now"
-                  ? "rounded-md bg-tan px-5 py-2.5 text-white hover:bg-tan-light"
+                link.label === "Book Your Free Call"
+                  ? "rounded-lg bg-tan px-6 py-3 font-bold uppercase tracking-wide text-white hover:bg-tan-light"
                   : scrolled
                     ? "text-dark-green hover:text-tan"
                     : "text-white/90 hover:text-white"
@@ -119,8 +119,8 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     "text-lg font-medium text-dark-green transition-colors hover:text-tan",
-                    link.label === "Apply Now" &&
-                      "rounded-md bg-tan px-6 py-3 text-white hover:bg-tan-light"
+                    link.label === "Book Your Free Call" &&
+                      "rounded-lg bg-tan px-8 py-4 font-bold uppercase tracking-wide text-white hover:bg-tan-light"
                   )}
                 >
                   {link.label}

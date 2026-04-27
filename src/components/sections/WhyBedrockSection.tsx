@@ -1,9 +1,21 @@
 "use client";
 
 import { motion } from "motion/react";
+import { Check } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import Image from "next/image";
+
+const sellingPoints = [
+  "Your OWN business — this is NOT an MLM",
+  "No dragging friends & family to hotel meetings",
+  "Leads flowing in for you from day one",
+  "No experience necessary — we train you",
+  "No autoship or products piling up in the garage",
+  "No spamming people on social media",
+  "Work with top industry leaders",
+  "Won\u2019t cost you an arm and a leg to start",
+];
 
 export function WhyBedrockSection() {
   return (
@@ -15,13 +27,13 @@ export function WhyBedrockSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative aspect-[4/5] overflow-hidden rounded-lg"
+          className="relative aspect-[3/2] overflow-hidden rounded-lg"
         >
           <Image
             src="/images/team/recruitement-team.jpg"
             alt="The Bedrock team together"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark-green/20 to-transparent" />
@@ -47,53 +59,33 @@ export function WhyBedrockSection() {
 
           <AnimatedText
             as="p"
-            className="mb-6 text-lg leading-relaxed text-dark-green/80"
+            className="mb-8 text-lg font-medium leading-relaxed text-dark-green/80"
             delay={0.3}
           >
-            At Bedrock, we believe in the power of people helping people. Our
-            mission is to{" "}
-            <strong className="text-dark-green">
-              build a team that makes a real difference in families&apos; lives
-            </strong>{" "}
-            — and we do that by investing in dedicated, compassionate
-            professionals who care.
+            We opened the doors for our business launch challenge.
+            Imagine waking up tomorrow with a brand new at-home business —
+            that would be pretty cool, right?
           </AnimatedText>
 
-          <AnimatedText
-            as="p"
-            className="mb-6 text-lg leading-relaxed text-dark-green/80"
-            delay={0.4}
-          >
-            Whether you&apos;re experienced and looking for a team that values
-            integrity and growth, or you&apos;re brand new and ready to make a
-            real impact, Bedrock is the place to build a career that matters.
-          </AnimatedText>
-
-          <AnimatedText
-            as="p"
-            className="text-lg leading-relaxed text-dark-green/80"
-            delay={0.5}
-          >
-            We provide the training, the tools, and the community — you bring
-            the passion and the drive. Together, we help families across Texas
-            and beyond build something meaningful that lasts generations.
-          </AnimatedText>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-8"
-          >
-            <div className="flex items-center gap-4">
-              <div className="h-px flex-1 bg-tan/30" />
-              <span className="font-serif text-sm italic text-tan">
-                Est. in service of families
-              </span>
-              <div className="h-px flex-1 bg-tan/30" />
-            </div>
-          </motion.div>
+          <div className="space-y-3">
+            {sellingPoints.map((point, index) => (
+              <motion.div
+                key={point}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 + index * 0.08 }}
+                className="flex items-start gap-3"
+              >
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-tan">
+                  <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                </span>
+                <span className="text-base font-semibold text-dark-green">
+                  {point}
+                </span>
+              </motion.div>
+            ))}
+          </div>
 
           {/* YouTube Video Embed */}
           <motion.div

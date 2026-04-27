@@ -35,7 +35,7 @@ export function Footer() {
                 { href: "/#benefits", label: "Benefits" },
                 { href: "/#team", label: "Our Team" },
                 { href: "/blog", label: "Blog" },
-                { href: "/#contact", label: "Apply Now" },
+                { href: "/#contact", label: "Book Your Free Call" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

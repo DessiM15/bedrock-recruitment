@@ -26,11 +26,11 @@ export function FloatingCTA() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-6 right-6 z-50 hidden items-center gap-2 rounded-full bg-tan px-5 py-3 text-white shadow-lg transition-colors hover:bg-tan-light md:flex"
+            className="fixed bottom-6 right-6 z-50 hidden items-center gap-2 rounded-lg bg-tan px-6 py-4 font-bold uppercase tracking-wide text-white shadow-lg transition-colors hover:bg-tan-light md:flex"
             aria-label="Call Bedrock Financial Planning at (936) 243-3181"
           >
             <Phone className="h-5 w-5" />
-            <span className="text-sm font-medium">(936) 243-3181</span>
+            <span className="text-sm font-bold">(936) 243-3181</span>
           </motion.a>
         )}
       </AnimatePresence>
@@ -47,7 +47,7 @@ export function FloatingCTA() {
           >
             <a
               href="tel:9362433181"
-              className="flex items-center justify-center gap-2 bg-tan py-4 text-white shadow-[0_-4px_12px_rgba(0,0,0,0.1)]"
+              className="flex items-center justify-center gap-2 bg-tan py-5 font-bold uppercase tracking-wide text-white shadow-[0_-4px_12px_rgba(0,0,0,0.1)]"
               aria-label="Call Bedrock Financial Planning"
             >
               <Phone className="h-5 w-5" />

@@ -18,9 +18,7 @@ export function HeroSection() {
         >
           <source src="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/bech-hero.mp4" type="video/mp4" />
         </video>
-        <div
-          className="absolute inset-0 bg-tan/70"
-        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
