@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-tan: #A38D6D;
-  --color-tan-light: #C4B293;
-  --color-tan-dark: #8A7558;
-  --color-dark-green: #0B2412;
-  --color-dark-green-light: #153a22;
-  --color-cream: #FFFDF7;
-  --color-cream-dark: #F5F0E8;
+  --color-tan: #FF6B6B;
+  --color-tan-light: #FF8E8E;
+  --color-tan-dark: #E55A5A;
+  --color-dark-green: #1A535C;
+  --color-dark-green-light: #2A6B75;
+  --color-cream: #FFFAFA;
+  --color-cream-dark: #FFF0F0;
   --color-white: #ffffff;
 
   --font-serif: var(--font-playfair);
@@ -82,4 +82,39 @@ textarea:focus {
 ::selection {
   background-color: var(--color-tan);
   color: var(--color-white);
+}
+
+/* ===== Theme Overrides ===== */
+
+/* Theme 1: Sunset Energy (Coral + Teal) — DEFAULT (matches @theme inline above) */
+[data-theme="sunset"] {
+  --color-tan: #FF6B6B;
+  --color-tan-light: #FF8E8E;
+  --color-tan-dark: #E55A5A;
+  --color-dark-green: #1A535C;
+  --color-dark-green-light: #2A6B75;
+  --color-cream: #FFFAFA;
+  --color-cream-dark: #FFF0F0;
+}
+
+/* Theme 2: Bold Ambition (Electric Orange + Navy) */
+[data-theme="bold"] {
+  --color-tan: #FF6D00;
+  --color-tan-light: #FF8A33;
+  --color-tan-dark: #E56200;
+  --color-dark-green: #1B2A4A;
+  --color-dark-green-light: #2A3D66;
+  --color-cream: #FFFAF5;
+  --color-cream-dark: #FFF3E8;
+}
+
+/* Theme 3: Fresh Momentum (Emerald + Charcoal) */
+[data-theme="fresh"] {
+  --color-tan: #00B894;
+  --color-tan-light: #33C9A8;
+  --color-tan-dark: #009D7E;
+  --color-dark-green: #2D3436;
+  --color-dark-green-light: #3D4446;
+  --color-cream: #FFF9F0;
+  --color-cream-dark: #FFF0DD;
 }

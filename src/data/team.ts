@@ -4,13 +4,13 @@ export const teamMembers: TeamMember[] = [
   {
     name: "David Townsend",
     role: "CEO & Founder",
-    bio: "David Townsend founded Bedrock Financial Planning with a vision to empower everyday families to take control of their financial futures. With decades of experience in the financial services industry, David leads with integrity, mentorship, and a deep commitment to helping agents build meaningful careers while serving their communities.",
+    bio: "David Townsend founded Bedrock with a vision to empower everyday families and help them build a brighter future. With decades of industry experience, David leads with integrity, mentorship, and a deep commitment to helping team members build meaningful careers while serving their communities.",
     image: "/images/team/david-townsend.webp",
   },
   {
     name: "Leslie Freitag",
-    role: "Senior Financial Advisor",
-    bio: "Leslie Freitag brings years of hands-on experience in financial planning and client relationship management. Known for her warm approach and sharp financial acumen, Leslie is passionate about training the next generation of advisors and ensuring every client receives personalized, thoughtful guidance.",
+    role: "Senior Advisor",
+    bio: "Leslie Freitag brings years of hands-on experience in client relationship management and team development. Known for her warm approach and sharp insight, Leslie is passionate about training the next generation of professionals and ensuring every client receives personalized, thoughtful guidance.",
     image: "/images/team/leslie-freitag.webp",
   },
   {

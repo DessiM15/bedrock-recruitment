@@ -68,9 +68,9 @@ export function ContactSection() {
             className="mb-6 font-serif text-3xl font-light leading-tight md:text-4xl lg:text-5xl"
             delay={0.1}
           >
-            Ready to Build
+            Ready to Change
             <br />
-            Something Great?
+            Your Life?
           </AnimatedText>
 
           <AnimatedText
@@ -78,9 +78,9 @@ export function ContactSection() {
             className="mb-8 text-lg leading-relaxed text-dark-green/80"
             delay={0.2}
           >
-            Take the first step toward a rewarding career in financial planning.
-            Fill out the form or give us a call — we&apos;d love to hear from
-            you.
+            Take the first step toward a career that changes lives — including
+            yours. Fill out the form or give us a call — we&apos;d love to hear
+            from you.
           </AnimatedText>
 
           <motion.div
@@ -211,7 +211,7 @@ export function ContactSection() {
                     {...register("message")}
                     id="message"
                     rows={4}
-                    placeholder="Share your background, experience, and what excites you about financial planning..."
+                    placeholder="Share your background, experience, and what excites you about this opportunity..."
                     className="w-full resize-none rounded-lg border border-dark-green/10 bg-cream px-4 py-3 text-dark-green placeholder:text-dark-green/30 transition-colors focus:border-tan"
                   />
                   {errors.message && (

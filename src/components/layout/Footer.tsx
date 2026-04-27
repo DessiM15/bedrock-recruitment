@@ -19,8 +19,8 @@ export function Footer() {
               className="mb-6 h-10 w-auto"
             />
             <p className="text-sm leading-relaxed text-cream/70">
-              Empowering individuals to take control of their financial futures
-              through comprehensive planning and dedicated service.
+              Empowering individuals to build brighter futures through
+              dedicated service and a commitment to families.
             </p>
           </div>
 

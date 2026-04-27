@@ -5,5 +5,6 @@ export const navigationItems: NavItem[] = [
   { id: "why-bedrock", label: "Why Bedrock", number: "02" },
   { id: "benefits", label: "Benefits", number: "03" },
   { id: "team", label: "Team", number: "04" },
-  { id: "contact", label: "Contact", number: "05" },
+  { id: "testimonials", label: "Testimonials", number: "05" },
+  { id: "contact", label: "Contact", number: "06" },
 ];

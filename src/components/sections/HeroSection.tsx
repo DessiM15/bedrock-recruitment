@@ -16,11 +16,10 @@ export function HeroSection() {
           className="h-full w-full object-cover"
           poster="/images/hero/hero-bg.svg"
         >
-          <source src="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/hero-bg.mp4" type="video/mp4" />
+          <source src="/images/hero/bech-hero.mp4" type="video/mp4" />
         </video>
         <div
-          className="absolute inset-0 bg-dark-green"
-          style={{ opacity: 0.55 }}
+          className="absolute inset-0 bg-tan/70"
         />
       </div>
 
@@ -46,19 +45,19 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-4xl font-serif text-4xl font-light leading-tight text-white md:text-6xl lg:text-7xl"
         >
-          Build Your Career
+          Your Dream Life
           <br />
-          <span className="text-tan-light">on Solid Ground</span>
+          <span className="text-white/90">Starts Here</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-6 max-w-xl text-lg font-light text-white/80 md:text-xl"
+          className="mt-6 max-w-xl text-lg font-light text-white/90 md:text-xl"
         >
-          Join Bedrock Financial Planning and empower families to take control of
-          their financial futures.
+          Imagine waking up tomorrow with a brand new business — your very own,
+          up and running for you. No experience necessary.
         </motion.p>
 
         <motion.a

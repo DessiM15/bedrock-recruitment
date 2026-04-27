@@ -4,7 +4,7 @@ export const benefits: Benefit[] = [
   {
     title: "Training & Mentorship",
     description:
-      "Comprehensive training programs for new and experienced agents alike. Learn from industry veterans who are invested in your success with one-on-one mentorship, weekly workshops, and ongoing professional development.",
+      "Comprehensive training programs for newcomers and experienced professionals alike. Learn from industry veterans who are invested in your success with one-on-one mentorship, weekly workshops, and ongoing development.",
     icon: "GraduationCap",
   },
   {
@@ -22,7 +22,7 @@ export const benefits: Benefit[] = [
   {
     title: "Compensation & Growth",
     description:
-      "Competitive commission structures with uncapped earning potential. As you grow your book of business and develop your team, unlock bonuses, overrides, and leadership opportunities.",
+      "Competitive compensation with uncapped earning potential. As you grow your business and develop your team, unlock bonuses, overrides, and leadership opportunities.",
     icon: "TrendingUp",
   },
 ];

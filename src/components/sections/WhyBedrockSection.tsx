@@ -18,8 +18,8 @@ export function WhyBedrockSection() {
           className="relative aspect-[4/5] overflow-hidden rounded-lg"
         >
           <Image
-            src="/images/hero/why-bedrock.jpg"
-            alt="Financial advisor helping a family with their plans"
+            src="/images/team/recruitement-team.jpg"
+            alt="The Bedrock team together"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -50,13 +50,13 @@ export function WhyBedrockSection() {
             className="mb-6 text-lg leading-relaxed text-dark-green/80"
             delay={0.3}
           >
-            At Bedrock Financial Planning, we believe everyone deserves access to
-            expert financial guidance. Our mission is to{" "}
+            At Bedrock, we believe in the power of people helping people. Our
+            mission is to{" "}
             <strong className="text-dark-green">
-              empower individuals to take control of their financial futures
+              build a team that makes a real difference in families&apos; lives
             </strong>{" "}
-            — and we do that by building a team of dedicated, compassionate
-            professionals.
+            — and we do that by investing in dedicated, compassionate
+            professionals who care.
           </AnimatedText>
 
           <AnimatedText
@@ -64,10 +64,9 @@ export function WhyBedrockSection() {
             className="mb-6 text-lg leading-relaxed text-dark-green/80"
             delay={0.4}
           >
-            Whether you&apos;re an experienced financial advisor looking for a
-            team that values integrity and growth, or you&apos;re new to the
-            industry and ready to make a real impact, Bedrock is the place to
-            build a career that matters.
+            Whether you&apos;re experienced and looking for a team that values
+            integrity and growth, or you&apos;re brand new and ready to make a
+            real impact, Bedrock is the place to build a career that matters.
           </AnimatedText>
 
           <AnimatedText
@@ -77,7 +76,7 @@ export function WhyBedrockSection() {
           >
             We provide the training, the tools, and the community — you bring
             the passion and the drive. Together, we help families across Texas
-            and beyond build financial security that lasts generations.
+            and beyond build something meaningful that lasts generations.
           </AnimatedText>
 
           <motion.div
@@ -93,6 +92,25 @@ export function WhyBedrockSection() {
                 Est. in service of families
               </span>
               <div className="h-px flex-1 bg-tan/30" />
+            </div>
+          </motion.div>
+
+          {/* YouTube Video Embed */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-8"
+          >
+            <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
+              <iframe
+                src="https://www.youtube.com/embed/W1fllCmj9Ew?start=5"
+                title="Learn more about the Bedrock opportunity"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 h-full w-full"
+              />
             </div>
           </motion.div>
         </div>

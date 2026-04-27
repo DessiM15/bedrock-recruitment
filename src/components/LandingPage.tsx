@@ -8,8 +8,10 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { WhyBedrockSection } from "@/components/sections/WhyBedrockSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { TeamSection } from "@/components/sections/TeamSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { LatestArticles } from "@/components/blog/LatestArticles";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import type { Article } from "@/types";
 
 interface LandingPageProps {
@@ -28,11 +30,13 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
         <WhyBedrockSection />
         <BenefitsSection />
         <TeamSection />
+        <TestimonialsSection />
         <ContactSection />
         <LatestArticles articles={latestArticles} />
       </main>
 
       <Footer />
+      <ThemeSwitcher />
     </>
   );
 }

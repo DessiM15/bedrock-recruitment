@@ -15,21 +15,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Careers | Bedrock Financial Planning",
+  title: "Careers | Bedrock",
   description:
-    "Build your career on solid ground. Join Bedrock Financial Planning and empower families to take control of their financial futures. Training, mentorship, leads, and unlimited growth potential.",
+    "Your dream life starts here. Join Bedrock and help families build brighter futures. Training, mentorship, leads, and unlimited growth potential — no experience necessary.",
   keywords: [
-    "financial planning careers",
-    "financial advisor jobs",
+    "career opportunities",
+    "Bedrock careers",
     "Bedrock Financial Planning",
-    "insurance agent careers",
-    "financial services recruitment",
-    "Conroe Texas financial careers",
+    "remote careers Texas",
+    "mentorship careers",
+    "help families",
   ],
   openGraph: {
-    title: "Build Your Career on Solid Ground | Bedrock Financial Planning",
+    title: "Your Dream Life Starts Here | Bedrock",
     description:
-      "Join Bedrock Financial Planning. Training, mentorship, leads, and unlimited growth potential for financial agents.",
+      "Join Bedrock. Training, mentorship, leads, and unlimited growth potential. Change lives — starting with your own.",
     type: "website",
     locale: "en_US",
     siteName: "Bedrock Financial Planning",
