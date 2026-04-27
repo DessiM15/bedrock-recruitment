@@ -9,6 +9,7 @@ import { WhyBedrockSection } from "@/components/sections/WhyBedrockSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { TeamSection } from "@/components/sections/TeamSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { VideoSection } from "@/components/sections/VideoSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { LatestArticles } from "@/components/blog/LatestArticles";
 import { CTABanner } from "@/components/ui/CTABanner";
@@ -30,10 +31,11 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
         <HeroSection />
         <WhyBedrockSection />
         <CTABanner
-          headline="Limited Spots Available"
-          subtext="Because we are so hands-on, we can only take on a few people at a time."
+          headline="What Are You Waiting For?"
+          subtext="Your new career is one phone call away."
         />
         <BenefitsSection />
+        <VideoSection />
         <TeamSection />
         <TestimonialsSection />
         <CTABanner

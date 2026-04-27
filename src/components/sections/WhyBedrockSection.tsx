@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import Image from "next/image";
@@ -87,23 +87,31 @@ export function WhyBedrockSection() {
             ))}
           </div>
 
-          {/* YouTube Video Embed */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+          {/* Kicker + CTA */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-8"
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="mt-8 text-xl font-black text-tan md:text-2xl"
           >
-            <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
-              <iframe
-                src="https://www.youtube.com/embed/W1fllCmj9Ew?start=5"
-                title="Learn more about the Bedrock opportunity"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              />
-            </div>
+            All this without costing you an arm and a leg.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+            className="mt-6"
+          >
+            <a
+              href="#contact"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-tan px-10 py-5 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:bg-tan-light sm:w-auto"
+            >
+              Book Your Free 5-Minute Call
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </motion.div>
         </div>
       </div>
