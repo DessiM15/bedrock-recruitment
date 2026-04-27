@@ -7,7 +7,7 @@ import { AnimatedText } from "@/components/ui/AnimatedText";
 export function VideoSection() {
   return (
     <SectionWrapper id="video" className="!min-h-0 flex items-center" dark>
-      <div className="mx-auto max-w-6xl text-center">
+      <div className="mx-auto max-w-7xl text-center">
         <AnimatedText
           as="span"
           className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-tan"
