@@ -6,33 +6,32 @@ export function useActiveSection(sectionIds: string[]) {
   const [activeSection, setActiveSection] = useState(sectionIds[0]);
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    function handleScroll() {
+      const viewportCenter = window.scrollY + window.innerHeight / 2;
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (!element) return;
+      let closestId = sectionIds[0];
+      let closestDistance = Infinity;
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(id);
-            }
-          });
-        },
-        {
-          threshold: 0.3,
-          rootMargin: "-10% 0px -10% 0px",
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+        const sectionCenter = window.scrollY + rect.top + rect.height / 2;
+        const distance = Math.abs(viewportCenter - sectionCenter);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestId = id;
         }
-      );
+      }
 
-      observer.observe(element);
-      observers.push(observer);
-    });
+      setActiveSection(closestId);
+    }
 
-    return () => {
-      observers.forEach((observer) => observer.disconnect());
-    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [sectionIds]);
 
   return activeSection;

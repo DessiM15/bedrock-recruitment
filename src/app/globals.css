@@ -196,37 +196,3 @@ textarea:focus {
   }
 }
 
-/* ===== Theme Overrides ===== */
-
-/* Theme 1: Electric Red — DEFAULT (matches @theme above) */
-[data-theme="electric"] {
-  --color-tan: #FF2D2D;
-  --color-tan-light: #FF5252;
-  --color-tan-dark: #E02020;
-  --color-dark-green: #0A0A0A;
-  --color-dark-green-light: #1A1A1A;
-  --color-cream: #FFFFFF;
-  --color-cream-dark: #F5F5F5;
-}
-
-/* Theme 2: Neon Orange + Deep Purple */
-[data-theme="neon"] {
-  --color-tan: #FF5500;
-  --color-tan-light: #FF7733;
-  --color-tan-dark: #E04A00;
-  --color-dark-green: #1A0A2E;
-  --color-dark-green-light: #2A1A3E;
-  --color-cream: #FAFAFA;
-  --color-cream-dark: #F0F0F0;
-}
-
-/* Theme 3: Hot Pink-Red + Navy */
-[data-theme="hotpink"] {
-  --color-tan: #FF0055;
-  --color-tan-light: #FF3377;
-  --color-tan-dark: #E00048;
-  --color-dark-green: #1A1A2E;
-  --color-dark-green-light: #2A2A3E;
-  --color-cream: #FFFFFF;
-  --color-cream-dark: #F5F0F5;
-}

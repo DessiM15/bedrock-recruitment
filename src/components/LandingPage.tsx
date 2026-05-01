@@ -13,7 +13,6 @@ import { VideoSection } from "@/components/sections/VideoSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { LatestArticles } from "@/components/blog/LatestArticles";
 import { CTABanner } from "@/components/ui/CTABanner";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import type { Article } from "@/types";
 
 interface LandingPageProps {
@@ -43,13 +42,13 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
           headline="Ready to Upgrade Your Life & Bank Account?"
           subtext="The only thing between you and your dream life is one phone call."
           buttonText="Call Now"
+          backgroundImage="/images/cta-luxury.jpg"
         />
         <ContactSection />
         <LatestArticles articles={latestArticles} />
       </main>
 
       <Footer />
-      <ThemeSwitcher />
     </>
   );
 }
