@@ -5,11 +5,11 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { ChevronDown } from "lucide-react";
 
 const fomoSequence = [
-  { time: 0.0, text: "You missed Bitcoin." },
-  { time: 2.0, text: "You missed Amazon." },
-  { time: 5.8, text: "You missed Tesla." },
-  { time: 7.8, text: "You missed Uber." },
-  { time: 10.5, text: "You missed Crypto." },
+  { time: 0.0, text: "YOU MISSED BITCOIN." },
+  { time: 2.0, text: "YOU MISSED AMAZON." },
+  { time: 5.8, text: "YOU MISSED TESLA." },
+  { time: 7.8, text: "YOU MISSED UBER." },
+  { time: 10.5, text: "YOU MISSED CRYPTO." },
   { time: 12.9, text: "DON'T MISS THIS." },
 ];
 
@@ -44,9 +44,7 @@ export function HeroSection() {
 
     function handleCanPlay() {
       setVideoReady(true);
-      // Ensure video starts playing
       video?.play().catch(() => {
-        // Autoplay blocked — still show content
         setVideoReady(true);
       });
     }
@@ -65,7 +63,6 @@ export function HeroSection() {
     video.addEventListener("play", handlePlay);
     video.addEventListener("ended", handleEnded);
 
-    // If video is already ready (cached)
     if (video.readyState >= 3) {
       setVideoReady(true);
       video.play().catch(() => {});
@@ -84,6 +81,14 @@ export function HeroSection() {
 
   return (
     <div id="hero" className="hero-sticky h-screen w-full bg-black">
+      {/* Poster image — shows immediately while video loads */}
+      <div
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
+          videoReady ? "opacity-0" : "opacity-100"
+        }`}
+        style={{ backgroundImage: "url('/images/hero/new-hero-poster.jpg')" }}
+      />
+
       {/* Video background with tint */}
       <div className="absolute inset-0 overflow-hidden">
         <video
@@ -92,12 +97,18 @@ export function HeroSection() {
           muted
           playsInline
           preload="auto"
+          poster="/images/hero/new-hero-poster.jpg"
           className={`h-full w-full object-cover transition-opacity duration-500 ${
             videoReady ? "opacity-100" : "opacity-0"
           }`}
           src="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/new-hero.mp4"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        {/* Tint — darker on the last clip so red text pops over GPN logo */}
+        <div
+          className={`absolute inset-0 transition-colors duration-500 ${
+            isCloser ? "bg-black/70" : "bg-black/50"
+          }`}
+        />
       </div>
 
       {/* Content overlay */}
@@ -113,8 +124,8 @@ export function HeroSection() {
               transition={{ duration: 0.25 }}
               className={
                 isCloser
-                  ? "text-4xl font-black uppercase text-tan drop-shadow-[0_0_30px_rgba(255,45,45,0.5)] md:text-6xl lg:text-8xl"
-                  : "text-2xl font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] md:text-3xl lg:text-5xl"
+                  ? "text-4xl font-black uppercase text-tan drop-shadow-[0_0_40px_rgba(255,45,45,0.6)] md:text-6xl lg:text-8xl"
+                  : "text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-3xl lg:text-5xl"
               }
             >
               {currentItem.text}
