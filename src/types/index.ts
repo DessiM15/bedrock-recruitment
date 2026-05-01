@@ -1,6 +1,6 @@
 export interface TeamMember {
   name: string;
-  role: string;
+  role?: string;
   bio: string;
   image: string;
 }

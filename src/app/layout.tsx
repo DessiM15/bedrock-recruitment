@@ -15,24 +15,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Careers | Bedrock",
+  title: "Get Paid Nation | Your Next Big Opportunity",
   description:
-    "Your dream life starts here. Join Bedrock and help families build brighter futures. Training, mentorship, leads, and unlimited growth potential — no experience necessary.",
+    "You missed Bitcoin. You missed Amazon. Don\u2019t miss THIS. Join Get Paid Nation and start building real wealth from home. Training, mentorship, leads, and unlimited earning potential.",
   keywords: [
-    "career opportunities",
-    "Bedrock careers",
-    "Bedrock Financial Planning",
-    "remote careers Texas",
-    "mentorship careers",
-    "help families",
+    "make money from home",
+    "Get Paid Nation",
+    "wealth building opportunity",
+    "work from home business",
+    "financial freedom",
+    "residual income",
   ],
   openGraph: {
-    title: "Your Dream Life Starts Here | Bedrock",
+    title: "Don\u2019t Miss the Next Big Opportunity | Get Paid Nation",
     description:
-      "Join Bedrock. Training, mentorship, leads, and unlimited growth potential. Change lives — starting with your own.",
+      "Join Get Paid Nation. Training, mentorship, leads provided, and unlimited earning potential. Upgrade your life and bank account.",
     type: "website",
     locale: "en_US",
-    siteName: "Bedrock Financial Planning",
+    siteName: "Get Paid Nation",
   },
 };
 

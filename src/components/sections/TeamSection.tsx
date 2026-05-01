@@ -53,9 +53,11 @@ export function TeamSection() {
               <h3 className="mb-1 font-serif text-xl font-semibold text-cream">
                 {member.name}
               </h3>
-              <p className="mb-4 text-sm font-medium text-tan">
-                {member.role}
-              </p>
+              {member.role && (
+                <p className="mb-4 text-sm font-medium text-tan">
+                  {member.role}
+                </p>
+              )}
               <p className="mx-auto max-w-sm text-sm leading-relaxed text-cream/70">
                 {member.bio}
               </p>

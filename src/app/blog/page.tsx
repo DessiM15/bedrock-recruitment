@@ -7,9 +7,9 @@ import type { Metadata } from "next";
 export const revalidate = 86400; // Daily revalidation for auto-publishing
 
 export const metadata: Metadata = {
-  title: "Blog | Bedrock Financial Planning",
+  title: "Blog | Get Paid Nation",
   description:
-    "Insights, tips, and resources for financial planning professionals. Career advice, industry trends, and more from the Bedrock team.",
+    "Wealth building tips, lifestyle inspiration, and success stories from the Get Paid Nation team. Learn how ordinary people are creating extraordinary income.",
 };
 
 export default function BlogPage() {
@@ -27,11 +27,11 @@ export default function BlogPage() {
               Our Blog
             </span>
             <h1 className="mb-4 font-serif text-4xl font-light md:text-5xl">
-              Insights & Resources
+              Wealth & Lifestyle
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-dark-green/70">
-              Expert perspectives on building a successful career in financial
-              planning, industry trends, and professional development.
+              Success stories, wealth-building strategies, and the mindset
+              shifts that turn ordinary people into extraordinary earners.
             </p>
           </div>
 

@@ -2,27 +2,27 @@ import type { Benefit } from "@/types";
 
 export const benefits: Benefit[] = [
   {
-    title: "Training & Mentorship",
+    title: "World-Class Training",
     description:
-      "Comprehensive training programs for newcomers and experienced professionals alike. Learn from industry veterans who are invested in your success with one-on-one mentorship, weekly workshops, and ongoing development.",
+      "Get mentored by people who have already done it. Our step-by-step training system takes you from zero to earning — fast. Weekly coaching calls, on-demand resources, and a team that won\u2019t let you fail.",
     icon: "GraduationCap",
   },
   {
-    title: "Leads & Marketing",
+    title: "Leads On Autopilot",
     description:
-      "Never worry about where your next client is coming from. We provide qualified leads, proven marketing systems, and brand support so you can focus on what matters most — helping people.",
+      "Forget cold calling and begging friends. We hand you qualified leads from day one with proven marketing systems already in place. You focus on closing — we handle the rest.",
     icon: "Target",
   },
   {
-    title: "Flexible Schedule",
+    title: "Work On Your Terms",
     description:
-      "Build your career around your life, not the other way around. Enjoy the freedom to set your own hours, work from anywhere, and create a schedule that fits your personal and family needs.",
+      "No commute. No boss. No alarm clock you hate. Build your income from your laptop, your couch, or a beach in Bali. This is what real freedom looks like.",
     icon: "Clock",
   },
   {
-    title: "Compensation & Growth",
+    title: "Uncapped Earning Potential",
     description:
-      "Competitive compensation with uncapped earning potential. As you grow your business and develop your team, unlock bonuses, overrides, and leadership opportunities.",
+      "There\u2019s no salary ceiling here. The more you put in, the more you take home. Bonuses, residual income, and growth opportunities that scale with your ambition.",
     icon: "TrendingUp",
   },
 ];

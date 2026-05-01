@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
@@ -11,16 +10,13 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <Image
-              src="/images/logos/bedrock-logo-white.png"
-              alt="Bedrock Financial Planning"
-              width={160}
-              height={42}
-              className="mb-6 h-10 w-auto"
-            />
+            <span className="mb-6 block text-2xl font-black uppercase tracking-wider text-white">
+              Get Paid{" "}
+              <span className="text-gold">Nation</span>
+            </span>
             <p className="text-sm leading-relaxed text-cream/70">
-              Empowering individuals to build brighter futures through
-              dedicated service and a commitment to families.
+              Empowering ordinary people to build extraordinary wealth.
+              Your dream lifestyle is closer than you think.
             </p>
           </div>
 
@@ -31,11 +27,11 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                { href: "/#why-bedrock", label: "Why Bedrock" },
+                { href: "/#why-bedrock", label: "The Opportunity" },
                 { href: "/#benefits", label: "Benefits" },
                 { href: "/#team", label: "Our Team" },
                 { href: "/blog", label: "Blog" },
-                { href: "/#contact", label: "Book Your Free Call" },
+                { href: "/#contact", label: "Schedule Your Call" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -85,7 +81,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-cream/10 pt-8 text-center">
           <p className="text-xs text-cream/50">
-            &copy; {currentYear} Bedrock Financial Planning. All rights reserved.
+            &copy; {currentYear} Get Paid Nation. All rights reserved.
           </p>
         </div>
       </div>

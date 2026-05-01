@@ -1,12 +1,58 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useEffect, useMemo } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 
+const fomoLines = [
+  "You missed Bitcoin.",
+  "You missed Amazon.",
+  "You missed Tesla.",
+];
+
+const closerLine = "Don't miss THIS.";
+const tagline = "The next big opportunity is here. Are you in?";
+
 export function HeroSection() {
+  const [currentLine, setCurrentLine] = useState(0);
+  const [showCloser, setShowCloser] = useState(false);
+  const [showTagline, setShowTagline] = useState(false);
+  const [showCTA, setShowCTA] = useState(false);
+
+  // Generate stable particle positions once
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        left: `${5 + ((i * 47) % 90)}%`,
+        delay: `${(i * 0.7) % 5}s`,
+        duration: `${3 + ((i * 1.3) % 4)}s`,
+      })),
+    []
+  );
+
+  useEffect(() => {
+    const lineDelay = 1200;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
+    fomoLines.forEach((_, index) => {
+      timers.push(
+        setTimeout(() => setCurrentLine(index + 1), 1500 + index * lineDelay)
+      );
+    });
+
+    const closerDelay = 1500 + fomoLines.length * lineDelay + 600;
+    timers.push(setTimeout(() => setShowCloser(true), closerDelay));
+    timers.push(setTimeout(() => setShowTagline(true), closerDelay + 1000));
+    timers.push(setTimeout(() => setShowCTA(true), closerDelay + 1800));
+
+    return () => timers.forEach(clearTimeout);
+  }, []);
+
   return (
     <div id="hero" className="hero-sticky h-screen w-full">
+      {/* Video Background with heavy dark overlay */}
       <div className="absolute inset-0 overflow-hidden">
         <video
           autoPlay
@@ -16,66 +62,120 @@ export function HeroSection() {
           className="h-full w-full object-cover"
           poster="/images/hero/hero-bg.svg"
         >
-          <source src="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/bech-hero.mp4" type="video/mp4" />
+          <source
+            src="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/bech-hero.mp4"
+            type="video/mp4"
+          />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-black/85" />
+      </div>
+
+      {/* Gold Floating Particles */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {particles.map((p) => (
+          <div
+            key={p.id}
+            className="gold-particle"
+            style={{
+              left: p.left,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
+            }}
+          />
+        ))}
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+        {/* Get Paid Nation Logo with Glow */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="hero-logo-glow mb-10"
         >
           <Image
-            src="/images/logos/bedrock-logo-white.png"
-            alt="Bedrock Financial Planning"
-            width={220}
-            height={58}
-            className="mx-auto mb-8 h-14 w-auto md:h-16"
+            src="/images/hero/get-paid-nation.png"
+            alt="Get Paid Nation"
+            width={500}
+            height={200}
+            className="mx-auto h-auto w-[280px] md:w-[400px] lg:w-[500px]"
             priority
           />
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-5xl font-sans text-5xl font-black uppercase leading-none tracking-tight text-white md:text-7xl lg:text-8xl"
-        >
-          Your Dream Life
-          <br />
-          <span className="text-white/90">Starts Here</span>
-        </motion.h1>
+        {/* FOMO Typewriter Lines */}
+        <div className="mb-6 flex min-h-[180px] flex-col items-center justify-center space-y-2 md:min-h-[220px]">
+          {fomoLines.map((line, index) => (
+            <AnimatePresence key={line}>
+              {currentLine > index && (
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 0.7, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-xl font-medium text-white md:text-2xl lg:text-3xl"
+                >
+                  {line}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          ))}
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-6 max-w-xl text-lg font-medium text-white/90 md:text-xl"
-        >
-          Imagine waking up tomorrow with a brand new business — your very own,
-          up and running for you. No experience necessary.
-        </motion.p>
+          {/* Closer Line - Big, Bold, Red */}
+          <AnimatePresence>
+            {showCloser && (
+              <motion.p
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="mt-4 text-3xl font-black uppercase text-tan md:text-5xl lg:text-6xl"
+              >
+                {closerLine}
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
 
-        <motion.a
-          href="#why-bedrock"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="group mt-12 flex flex-col items-center gap-2 text-white/60 transition-colors hover:text-white"
-          aria-label="Scroll to learn more"
-        >
-          <span className="text-xs uppercase tracking-[0.2em]">
-            Begin scrolling
-          </span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronDown className="h-5 w-5" />
-          </motion.div>
-        </motion.a>
+        {/* Tagline */}
+        <AnimatePresence>
+          {showTagline && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-xl text-lg font-medium text-white/80 md:text-xl"
+            >
+              {tagline}
+            </motion.p>
+          )}
+        </AnimatePresence>
+
+        {/* Scroll CTA */}
+        <AnimatePresence>
+          {showCTA && (
+            <motion.a
+              href="#why-bedrock"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="group mt-10 flex flex-col items-center gap-2 text-white/60 transition-colors hover:text-white"
+              aria-label="Scroll to learn more"
+            >
+              <span className="text-xs uppercase tracking-[0.2em]">
+                See what you&apos;re missing
+              </span>
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <ChevronDown className="h-5 w-5" />
+              </motion.div>
+            </motion.a>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

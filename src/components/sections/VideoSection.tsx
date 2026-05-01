@@ -32,7 +32,7 @@ export function VideoSection() {
         >
           <iframe
             src="https://www.youtube.com/embed/W1fllCmj9Ew?start=5"
-            title="Learn more about the Bedrock opportunity"
+            title="Learn more about the Get Paid Nation opportunity"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="absolute inset-0 h-full w-full"

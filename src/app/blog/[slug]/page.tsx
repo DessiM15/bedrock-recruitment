@@ -24,11 +24,11 @@ export async function generateMetadata({
   const article = getArticleBySlug(slug);
 
   if (!article) {
-    return { title: "Article Not Found | Bedrock Financial Planning" };
+    return { title: "Article Not Found | Get Paid Nation" };
   }
 
   return {
-    title: `${article.title} | Bedrock Financial Planning`,
+    title: `${article.title} | Get Paid Nation`,
     description: article.excerpt,
     openGraph: {
       title: article.title,
@@ -116,17 +116,17 @@ export default async function ArticlePage({
           {/* CTA */}
           <div className="mt-16 rounded-xl bg-dark-green p-8 text-center md:p-12">
             <h3 className="mb-4 font-serif text-2xl font-light text-cream md:text-3xl">
-              Interested in a Career at Bedrock?
+              Ready to Start Earning?
             </h3>
             <p className="mb-6 text-cream/70">
-              We&apos;re always looking for passionate individuals to join our
-              team.
+              Don&apos;t just read about success — start building it. Schedule
+              your call today.
             </p>
             <Link
               href="/#contact"
               className="inline-flex items-center gap-2 rounded-md bg-tan px-6 py-3 font-medium text-white transition-colors hover:bg-tan-light"
             >
-              Apply Now
+              Schedule Your Call
             </Link>
           </div>
         </article>

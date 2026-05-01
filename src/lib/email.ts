@@ -8,7 +8,7 @@ function getResendClient() {
   return new Resend(apiKey);
 }
 
-const BEDROCK_EMAIL = process.env.NOTIFICATION_EMAIL || "team@bedrockfinancialplanning.com";
+const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || "team@bedrockfinancialplanning.com";
 
 export async function sendNotificationEmail(data: {
   name: string;
@@ -22,23 +22,23 @@ export async function sendNotificationEmail(data: {
     return { data: null, error: null };
   }
   return resend.emails.send({
-    from: "Bedrock Recruitment <onboarding@resend.dev>",
-    to: BEDROCK_EMAIL,
-    subject: `New Recruitment Inquiry from ${data.name}`,
+    from: "Get Paid Nation <onboarding@resend.dev>",
+    to: NOTIFICATION_EMAIL,
+    subject: `New Inquiry from ${data.name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #0B2412;">New Recruitment Inquiry</h2>
-        <hr style="border-color: #A38D6D;" />
+        <h2 style="color: #0A0A0A;">New Inquiry</h2>
+        <hr style="border-color: #C9A84C;" />
         <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
         <p><strong>Phone:</strong> ${escapeHtml(data.phone)}</p>
         <p><strong>Message:</strong></p>
-        <p style="background: #F5F0E8; padding: 16px; border-radius: 8px;">
+        <p style="background: #F5F5F5; padding: 16px; border-radius: 8px;">
           ${escapeHtml(data.message)}
         </p>
-        <hr style="border-color: #A38D6D;" />
+        <hr style="border-color: #C9A84C;" />
         <p style="color: #666; font-size: 12px;">
-          This inquiry was submitted through the Bedrock Financial Planning recruitment page.
+          This inquiry was submitted through the Get Paid Nation website.
         </p>
       </div>
     `,
@@ -55,21 +55,21 @@ export async function sendConfirmationEmail(data: {
     return { data: null, error: null };
   }
   return resend.emails.send({
-    from: "Bedrock Financial Planning <onboarding@resend.dev>",
+    from: "Get Paid Nation <onboarding@resend.dev>",
     to: data.email,
-    subject: "Thank You for Your Interest in Bedrock Financial Planning",
+    subject: "Welcome to Get Paid Nation — Let\u2019s Get Started",
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #0B2412;">Thank You, ${escapeHtml(data.name)}!</h2>
-        <p>We've received your inquiry and are excited about the possibility of having you join the Bedrock family.</p>
-        <p>A member of our team will review your submission and reach out within 1-2 business days to discuss next steps.</p>
-        <p>In the meantime, feel free to call us directly at <a href="tel:9362433181" style="color: #A38D6D;">(936) 243-3181</a>.</p>
+        <h2 style="color: #0A0A0A;">Welcome, ${escapeHtml(data.name)}!</h2>
+        <p>We\u2019ve received your inquiry and we\u2019re excited to connect with you about this opportunity.</p>
+        <p>A member of our team will reach out within 1-2 business days to discuss how you can start building your dream lifestyle.</p>
+        <p>In the meantime, feel free to call us directly at <a href="tel:9362433181" style="color: #FF2D2D; font-weight: bold;">(936) 243-3181</a>.</p>
         <br />
-        <p>Warm regards,</p>
-        <p><strong>The Bedrock Financial Planning Team</strong></p>
-        <hr style="border-color: #A38D6D;" />
+        <p>Talk soon,</p>
+        <p><strong>The Get Paid Nation Team</strong></p>
+        <hr style="border-color: #C9A84C;" />
         <p style="color: #666; font-size: 12px;">
-          Bedrock Financial Planning &mdash; Building Careers on Solid Ground
+          Get Paid Nation &mdash; Your Dream Life Starts Here
         </p>
       </div>
     `,

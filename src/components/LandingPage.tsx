@@ -32,16 +32,17 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
         <WhyBedrockSection />
         <CTABanner
           headline="What Are You Waiting For?"
-          subtext="Your new career is one phone call away."
+          subtext="Your dream life is one call away."
+          buttonText="Schedule Your Call Now"
         />
         <BenefitsSection />
         <VideoSection />
         <TeamSection />
         <TestimonialsSection />
         <CTABanner
-          headline="Ready to Change Your Life?"
-          subtext="Set your free 5-minute phone appointment now."
-          buttonText="Set Your Free Appointment"
+          headline="Ready to Upgrade Your Life & Bank Account?"
+          subtext="The only thing between you and your dream life is one phone call."
+          buttonText="Call Now"
         />
         <ContactSection />
         <LatestArticles articles={latestArticles} />

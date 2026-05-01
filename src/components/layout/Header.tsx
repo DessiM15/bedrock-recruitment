@@ -3,16 +3,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Phone } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/#why-bedrock", label: "Why Bedrock" },
+  { href: "/#why-bedrock", label: "The Opportunity" },
   { href: "/#benefits", label: "Benefits" },
   { href: "/#team", label: "Team" },
   { href: "/blog", label: "Blog" },
-  { href: "/#contact", label: "Book Your Free Call" },
+  { href: "/#contact", label: "Schedule Your Call" },
 ];
 
 export function Header() {
@@ -38,18 +37,22 @@ export function Header() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="relative z-10">
-          <Image
-            src={
-              scrolled
-                ? "/images/logos/bedrock-financial-logo.png"
-                : "/images/logos/bedrock-logo-white.png"
-            }
-            alt="Bedrock Financial Planning"
-            width={180}
-            height={48}
-            className="h-10 w-auto md:h-12"
-            priority
-          />
+          <span
+            className={cn(
+              "text-xl font-black uppercase tracking-wider transition-colors duration-300 md:text-2xl",
+              scrolled ? "text-dark-green" : "text-white"
+            )}
+          >
+            Get Paid{" "}
+            <span
+              className={cn(
+                "transition-colors duration-300",
+                scrolled ? "text-tan" : "text-gold"
+              )}
+            >
+              Nation
+            </span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -60,7 +63,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 "text-sm font-medium tracking-wide transition-colors duration-200",
-                link.label === "Book Your Free Call"
+                link.label === "Schedule Your Call"
                   ? "rounded-lg bg-tan px-6 py-3 font-bold uppercase tracking-wide text-white hover:bg-tan-light"
                   : scrolled
                     ? "text-dark-green hover:text-tan"
@@ -119,7 +122,7 @@ export function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     "text-lg font-medium text-dark-green transition-colors hover:text-tan",
-                    link.label === "Book Your Free Call" &&
+                    link.label === "Schedule Your Call" &&
                       "rounded-lg bg-tan px-8 py-4 font-bold uppercase tracking-wide text-white hover:bg-tan-light"
                   )}
                 >

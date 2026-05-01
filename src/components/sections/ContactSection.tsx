@@ -68,9 +68,9 @@ export function ContactSection() {
             className="mb-6 font-serif text-3xl font-light leading-tight md:text-4xl lg:text-5xl"
             delay={0.1}
           >
-            Ready to Change
+            Your Future Self
             <br />
-            Your Life?
+            Will Thank You
           </AnimatedText>
 
           <AnimatedText
@@ -78,9 +78,8 @@ export function ContactSection() {
             className="mb-8 text-lg leading-relaxed text-dark-green/80"
             delay={0.2}
           >
-            Take the first step toward a career that changes lives — including
-            yours. Fill out the form or give us a call — we&apos;d love to hear
-            from you.
+            Every day you wait is money left on the table. Fill out the form or
+            give us a call — your dream lifestyle is one conversation away.
           </AnimatedText>
 
           <motion.div

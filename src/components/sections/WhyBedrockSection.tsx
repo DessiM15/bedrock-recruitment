@@ -1,42 +1,50 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Play } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { AnimatedText } from "@/components/ui/AnimatedText";
-import Image from "next/image";
 
 const sellingPoints = [
-  "Your OWN business — this is NOT an MLM",
-  "No dragging friends & family to hotel meetings",
-  "Leads flowing in for you from day one",
-  "No experience necessary — we train you",
-  "No autoship or products piling up in the garage",
-  "No spamming people on social media",
-  "Work with top industry leaders",
-  "Won\u2019t cost you an arm and a leg to start",
+  "Our top earners make six figures from home",
+  "Real residual income — get paid while you sleep",
+  "No ceiling on your earnings — sky\u2019s the limit",
+  "Work from anywhere — your laptop is your office",
+  "Full training & mentorship from day one",
+  "Leads provided — no cold calling required",
+  "Join a community of winners who are crushing it",
+  "Low startup cost, massive earning potential",
 ];
 
 export function WhyBedrockSection() {
   return (
     <SectionWrapper id="why-bedrock" className="flex items-center">
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:gap-16 lg:gap-24">
-        {/* Image */}
+        {/* Video Placeholder */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative aspect-[3/2] overflow-hidden rounded-lg"
+          className="video-placeholder-shimmer relative flex aspect-[3/2] items-center justify-center overflow-hidden rounded-lg border border-gold/30 bg-dark-green"
         >
-          <Image
-            src="/images/team/recruitement-team.jpg"
-            alt="The Bedrock team together"
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-green/20 to-transparent" />
+          {/* Decorative gold corner accents */}
+          <div className="absolute top-0 left-0 h-16 w-16 border-t-2 border-l-2 border-gold/50 rounded-tl-lg" />
+          <div className="absolute bottom-0 right-0 h-16 w-16 border-b-2 border-r-2 border-gold/50 rounded-br-lg" />
+
+          <div className="flex flex-col items-center gap-4 text-center">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold/60 bg-gold/10 transition-colors hover:bg-gold/20">
+              <Play className="ml-1 h-8 w-8 text-gold" fill="currentColor" />
+            </div>
+            <div>
+              <p className="text-lg font-bold text-white">
+                Lifestyle Video Coming Soon
+              </p>
+              <p className="mt-1 text-sm text-white/50">
+                See how our team really lives
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Content */}
@@ -46,7 +54,7 @@ export function WhyBedrockSection() {
             className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-tan"
             delay={0.1}
           >
-            Our Mission
+            The Opportunity
           </AnimatedText>
 
           <AnimatedText
@@ -54,7 +62,7 @@ export function WhyBedrockSection() {
             className="mb-6 font-serif text-3xl font-light leading-tight md:text-4xl lg:text-5xl"
             delay={0.2}
           >
-            Why Bedrock?
+            Why Get Paid Nation?
           </AnimatedText>
 
           <AnimatedText
@@ -62,9 +70,9 @@ export function WhyBedrockSection() {
             className="mb-8 text-lg font-medium leading-relaxed text-dark-green/80"
             delay={0.3}
           >
-            We opened the doors for our business launch challenge.
-            Imagine waking up tomorrow with a brand new at-home business —
-            that would be pretty cool, right?
+            While everyone else is trading time for money, our team members are
+            building real wealth from home. This isn&apos;t a job — it&apos;s a
+            lifestyle upgrade. The only question is whether you&apos;re ready.
           </AnimatedText>
 
           <div className="space-y-3">
@@ -95,7 +103,7 @@ export function WhyBedrockSection() {
             transition={{ duration: 0.5, delay: 0.9 }}
             className="mt-8 text-xl font-black text-tan md:text-2xl"
           >
-            All this without costing you an arm and a leg.
+            Stop dreaming. Start earning.
           </motion.p>
 
           <motion.div
@@ -107,9 +115,9 @@ export function WhyBedrockSection() {
           >
             <a
               href="#contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-tan px-10 py-5 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:bg-tan-light sm:w-auto"
+              className="cta-pulse inline-flex w-full items-center justify-center gap-2 rounded-lg bg-tan px-10 py-5 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:bg-tan-light sm:w-auto"
             >
-              Book Your Free 5-Minute Call
+              Increase Your Income Today
               <ArrowRight className="h-5 w-5" />
             </a>
           </motion.div>
