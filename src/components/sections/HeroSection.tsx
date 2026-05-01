@@ -52,22 +52,20 @@ export function HeroSection() {
 
   return (
     <div id="hero" className="hero-sticky h-screen w-full">
-      {/* Video Background with heavy dark overlay */}
-      <div className="absolute inset-0 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="h-full w-full object-cover"
-          poster="/images/hero/hero-bg.svg"
-        >
-          <source
-            src="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/bech-hero.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div className="absolute inset-0 bg-black/85" />
+      {/* Animated gradient background */}
+      <div className="hero-gradient absolute inset-0" />
+
+      {/* Get Paid Nation image as atmospheric background with blend mode */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/hero/get-paid-nation.png"
+          alt=""
+          width={1920}
+          height={600}
+          className="h-full w-full object-cover mix-blend-screen opacity-60"
+          priority
+          aria-hidden="true"
+        />
       </div>
 
       {/* Gold Floating Particles */}
@@ -86,19 +84,19 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        {/* Get Paid Nation Logo with Glow */}
+        {/* Get Paid Nation Logo — large and prominent */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="hero-logo-glow mb-10"
+          className="hero-logo-glow mb-8"
         >
           <Image
             src="/images/hero/get-paid-nation.png"
             alt="Get Paid Nation"
-            width={500}
-            height={200}
-            className="mx-auto h-auto w-[280px] md:w-[400px] lg:w-[500px]"
+            width={800}
+            height={320}
+            className="mx-auto h-auto w-[340px] md:w-[550px] lg:w-[700px] xl:w-[800px]"
             priority
           />
         </motion.div>

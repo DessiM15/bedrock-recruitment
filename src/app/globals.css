@@ -87,6 +87,35 @@ textarea:focus {
   color: var(--color-white);
 }
 
+/* Animated hero gradient */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #0a0a0a 25%,
+    #1a1208 50%,
+    #0a0a0a 75%,
+    #000000 100%
+  );
+  background-size: 400% 400%;
+  animation: heroGradientShift 8s ease-in-out infinite;
+}
+
+@keyframes heroGradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
 /* Hero Logo Glow */
 .hero-logo-glow {
   filter: drop-shadow(0 0 30px rgba(201, 168, 76, 0.4));
