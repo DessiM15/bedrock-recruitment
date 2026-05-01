@@ -84,23 +84,6 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        {/* Get Paid Nation Logo — large and prominent */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="hero-logo-glow mb-8"
-        >
-          <Image
-            src="/images/hero/get-paid-nation.png"
-            alt="Get Paid Nation"
-            width={800}
-            height={320}
-            className="mx-auto h-auto w-[340px] md:w-[550px] lg:w-[700px] xl:w-[800px]"
-            priority
-          />
-        </motion.div>
-
         {/* FOMO Typewriter Lines */}
         <div className="mb-6 flex min-h-[180px] flex-col items-center justify-center space-y-2 md:min-h-[220px]">
           {fomoLines.map((line, index) => (
