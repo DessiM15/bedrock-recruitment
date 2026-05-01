@@ -31,7 +31,7 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
           headline="What Are You Waiting For?"
           subtext="Your dream life is one call away."
           buttonText="Schedule Your Call Now"
-          backgroundVideo="/videos/cta-1.mp4"
+          backgroundVideo="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/cta-1.mp4"
         />
         <BenefitsSection />
         <VideoSection />
