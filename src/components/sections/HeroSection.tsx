@@ -9,8 +9,8 @@ const fomoSequence = [
   { time: 2.0, text: "YOU MISSED AMAZON." },
   { time: 5.8, text: "YOU MISSED TESLA." },
   { time: 7.8, text: "YOU MISSED UBER." },
-  { time: 9.2, text: "YOU MISSED CRYPTO." },
-  { time: 10.5, text: "DON'T MISS THE AI REVOLUTION." },
+  { time: 10.5, text: "YOU MISSED CRYPTO." },
+  { time: 10.8, text: "DON'T MISS THE AI REVOLUTION." },
 ];
 
 const CLOSER_INDEX = fomoSequence.length - 1;
