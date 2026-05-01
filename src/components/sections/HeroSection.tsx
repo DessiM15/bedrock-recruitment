@@ -95,7 +95,7 @@ export function HeroSection() {
           className={`h-full w-full object-cover transition-opacity duration-500 ${
             videoReady ? "opacity-100" : "opacity-0"
           }`}
-          src="/images/hero/new-hero.mp4"
+          src="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/new-hero.mp4"
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
