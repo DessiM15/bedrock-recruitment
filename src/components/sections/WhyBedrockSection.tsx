@@ -13,7 +13,6 @@ const sellingPoints = [
   "Full training & mentorship from day one",
   "Leads provided — no cold calling required",
   "Join a community of winners who are crushing it",
-  "Low startup cost, massive earning potential",
 ];
 
 export function WhyBedrockSection() {
