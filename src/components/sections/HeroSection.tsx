@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useMemo } from "react";
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
 
 const fomoLines = [
   "You missed Bitcoin.",
@@ -52,20 +51,18 @@ export function HeroSection() {
 
   return (
     <div id="hero" className="hero-sticky h-screen w-full">
-      {/* Animated gradient background */}
-      <div className="hero-gradient absolute inset-0" />
-
-      {/* Get Paid Nation image as atmospheric background with blend mode */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/hero/get-paid-nation.png"
-          alt=""
-          width={1920}
-          height={600}
-          className="h-full w-full object-cover mix-blend-screen opacity-60"
-          priority
-          aria-hidden="true"
-        />
+      {/* Video background with dark tint */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+        >
+          <source src="/images/hero/gpn-hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Gold Floating Particles */}
