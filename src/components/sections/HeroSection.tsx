@@ -6,17 +6,17 @@ import { ChevronDown } from "lucide-react";
 
 const fomoSequence = [
   { time: 0.0, text: "YOU MISSED BITCOIN." },
-  { time: 2.0, text: "YOU MISSED AMAZON." },
-  { time: 5.8, text: "YOU MISSED TESLA." },
-  { time: 7.8, text: "YOU MISSED UBER." },
-  { time: 10.5, text: "YOU MISSED CRYPTO." },
-  { time: 12.9, text: "DON'T MISS THE AI REVOLUTION." },
+  { time: 2.6, text: "YOU MISSED AMAZON." },
+  { time: 5.9, text: "YOU MISSED TESLA." },
+  { time: 7.6, text: "YOU MISSED UBER." },
+  { time: 10.0, text: "YOU MISSED CRYPTO." },
+  { time: 10.4, text: "DON'T MISS THE AI REVOLUTION." },
 ];
 
 const CLOSER_INDEX = fomoSequence.length - 1;
 
 export function HeroSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const [showCTA, setShowCTA] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -50,6 +50,7 @@ export function HeroSection() {
     }
 
     function handlePlay() {
+      setActiveIndex(0);
       rafRef.current = requestAnimationFrame(syncText);
     }
 
@@ -76,7 +77,8 @@ export function HeroSection() {
     };
   }, [syncText]);
 
-  const currentItem = fomoSequence[activeIndex];
+  const isPlaying = activeIndex >= 0;
+  const currentItem = isPlaying ? fomoSequence[activeIndex] : null;
   const isCloser = activeIndex === CLOSER_INDEX;
 
   return (
@@ -116,20 +118,22 @@ export function HeroSection() {
         {/* FOMO text — one line at a time, synced to video cuts */}
         <div className="flex min-h-[100px] items-center justify-center md:min-h-[120px]">
           <AnimatePresence mode="wait">
-            <motion.p
-              key={activeIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className={
-                isCloser
-                  ? "text-4xl font-black uppercase text-tan drop-shadow-[0_0_40px_rgba(255,45,45,0.6)] md:text-6xl lg:text-8xl"
-                  : "text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-3xl lg:text-5xl"
-              }
-            >
-              {currentItem.text}
-            </motion.p>
+            {currentItem && (
+              <motion.p
+                key={activeIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className={
+                  isCloser
+                    ? "text-4xl font-black uppercase text-tan drop-shadow-[0_0_40px_rgba(255,45,45,0.6)] md:text-6xl lg:text-8xl"
+                    : "text-2xl font-bold uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-3xl lg:text-5xl"
+                }
+              >
+                {currentItem.text}
+              </motion.p>
+            )}
           </AnimatePresence>
         </div>
 
