@@ -10,6 +10,7 @@ interface CTABannerProps {
   buttonText?: string;
   href?: string;
   backgroundImage?: string;
+  backgroundVideo?: string;
 }
 
 export function CTABanner({
@@ -18,10 +19,27 @@ export function CTABanner({
   buttonText = "Book Your Free Call",
   href = "#contact",
   backgroundImage,
+  backgroundVideo,
 }: CTABannerProps) {
+  const hasMedia = backgroundImage || backgroundVideo;
+
   return (
-    <section className={`section-overlay relative overflow-hidden ${backgroundImage ? "bg-dark-green" : "bg-tan"}`}>
-      {backgroundImage && (
+    <section className={`section-overlay relative overflow-hidden ${hasMedia ? "bg-dark-green" : "bg-tan"}`}>
+      {backgroundVideo && (
+        <>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/60" />
+        </>
+      )}
+      {backgroundImage && !backgroundVideo && (
         <>
           <Image
             src={backgroundImage}
@@ -65,7 +83,7 @@ export function CTABanner({
           <a
             href={href}
             className={`inline-flex items-center gap-2 rounded-lg px-10 py-5 text-lg font-bold uppercase tracking-wide transition-colors ${
-              backgroundImage
+              hasMedia
                 ? "bg-tan text-white hover:bg-tan-light"
                 : "bg-white text-tan hover:bg-cream-dark"
             }`}

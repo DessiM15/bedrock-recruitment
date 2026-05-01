@@ -2,7 +2,6 @@
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { DotNavigation } from "@/components/layout/DotNavigation";
 import { FloatingCTA } from "@/components/layout/FloatingCTA";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { WhyBedrockSection } from "@/components/sections/WhyBedrockSection";
@@ -23,7 +22,6 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
   return (
     <>
       <Header />
-      <DotNavigation />
       <FloatingCTA />
 
       <main>
@@ -33,6 +31,7 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
           headline="What Are You Waiting For?"
           subtext="Your dream life is one call away."
           buttonText="Schedule Your Call Now"
+          backgroundVideo="/videos/cta-1.mp4"
         />
         <BenefitsSection />
         <VideoSection />
