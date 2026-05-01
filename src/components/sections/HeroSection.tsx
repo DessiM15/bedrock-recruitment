@@ -16,8 +16,9 @@ const fomoSequence = [
 const CLOSER_INDEX = fomoSequence.length - 1;
 
 export function HeroSection() {
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [showCTA, setShowCTA] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const rafRef = useRef<number>(0);
 
@@ -26,7 +27,7 @@ export function HeroSection() {
     if (!video || video.paused || video.ended) return;
 
     const t = video.currentTime;
-    let newIndex = -1;
+    let newIndex = 0;
     for (let i = fomoSequence.length - 1; i >= 0; i--) {
       if (t >= fomoSequence[i].time) {
         newIndex = i;
@@ -41,6 +42,15 @@ export function HeroSection() {
     const video = videoRef.current;
     if (!video) return;
 
+    function handleCanPlay() {
+      setVideoReady(true);
+      // Ensure video starts playing
+      video?.play().catch(() => {
+        // Autoplay blocked — still show content
+        setVideoReady(true);
+      });
+    }
+
     function handlePlay() {
       rafRef.current = requestAnimationFrame(syncText);
     }
@@ -51,17 +61,25 @@ export function HeroSection() {
       setTimeout(() => setShowCTA(true), 1000);
     }
 
+    video.addEventListener("canplay", handleCanPlay);
     video.addEventListener("play", handlePlay);
     video.addEventListener("ended", handleEnded);
 
+    // If video is already ready (cached)
+    if (video.readyState >= 3) {
+      setVideoReady(true);
+      video.play().catch(() => {});
+    }
+
     return () => {
       cancelAnimationFrame(rafRef.current);
+      video.removeEventListener("canplay", handleCanPlay);
       video.removeEventListener("play", handlePlay);
       video.removeEventListener("ended", handleEnded);
     };
   }, [syncText]);
 
-  const currentItem = activeIndex >= 0 ? fomoSequence[activeIndex] : null;
+  const currentItem = fomoSequence[activeIndex];
   const isCloser = activeIndex === CLOSER_INDEX;
 
   return (
@@ -73,10 +91,12 @@ export function HeroSection() {
           autoPlay
           muted
           playsInline
-          className="h-full w-full object-cover"
-        >
-          <source src="/images/hero/new-hero.mp4" type="video/mp4" />
-        </video>
+          preload="auto"
+          className={`h-full w-full object-cover transition-opacity duration-500 ${
+            videoReady ? "opacity-100" : "opacity-0"
+          }`}
+          src="/images/hero/new-hero.mp4"
+        />
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
@@ -85,22 +105,20 @@ export function HeroSection() {
         {/* FOMO text — one line at a time, synced to video cuts */}
         <div className="flex min-h-[100px] items-center justify-center md:min-h-[120px]">
           <AnimatePresence mode="wait">
-            {currentItem && (
-              <motion.p
-                key={activeIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className={
-                  isCloser
-                    ? "text-4xl font-black uppercase text-tan drop-shadow-[0_0_30px_rgba(255,45,45,0.5)] md:text-6xl lg:text-8xl"
-                    : "text-2xl font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] md:text-3xl lg:text-5xl"
-                }
-              >
-                {currentItem.text}
-              </motion.p>
-            )}
+            <motion.p
+              key={activeIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className={
+                isCloser
+                  ? "text-4xl font-black uppercase text-tan drop-shadow-[0_0_30px_rgba(255,45,45,0.5)] md:text-6xl lg:text-8xl"
+                  : "text-2xl font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] md:text-3xl lg:text-5xl"
+              }
+            >
+              {currentItem.text}
+            </motion.p>
           </AnimatePresence>
         </div>
 
