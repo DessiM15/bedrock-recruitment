@@ -6,12 +6,14 @@ import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
+const CALENDAR_URL = "https://calendar.app.google/nnHuRJxv9dtGum4P7";
+
 const navLinks = [
   { href: "/#why-bedrock", label: "The Opportunity" },
   { href: "/#benefits", label: "Benefits" },
   { href: "/#team", label: "Team" },
   { href: "/blog", label: "Blog" },
-  { href: "/#contact", label: "Schedule Your Call" },
+  { href: CALENDAR_URL, label: "Schedule Your Call", external: true },
 ];
 
 export function Header() {
@@ -57,22 +59,32 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-sm font-medium tracking-wide transition-colors duration-200",
-                link.label === "Schedule Your Call"
-                  ? "rounded-lg bg-tan px-6 py-3 font-bold uppercase tracking-wide text-white hover:bg-tan-light"
-                  : scrolled
+          {navLinks.map((link) =>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-tan px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:bg-tan-light"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "text-sm font-medium tracking-wide transition-colors duration-200",
+                  scrolled
                     ? "text-dark-green hover:text-tan"
                     : "text-white/90 hover:text-white"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+                )}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <a
             href="tel:9362433181"
             className={cn(
@@ -115,20 +127,29 @@ export function Header() {
             className="absolute inset-x-0 top-0 bg-white pt-20 pb-8 shadow-lg md:hidden"
           >
             <div className="flex flex-col items-center gap-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    "text-lg font-medium text-dark-green transition-colors hover:text-tan",
-                    link.label === "Schedule Your Call" &&
-                      "rounded-lg bg-tan px-8 py-4 font-bold uppercase tracking-wide text-white hover:bg-tan-light"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="rounded-lg bg-tan px-8 py-4 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:bg-tan-light"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg font-medium text-dark-green transition-colors hover:text-tan"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <a
                 href="tel:9362433181"
                 className="flex items-center gap-2 text-lg font-medium text-dark-green hover:text-tan"

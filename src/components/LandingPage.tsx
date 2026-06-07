@@ -31,6 +31,8 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
           headline="What Are You Waiting For?"
           subtext="Your dream life is one call away."
           buttonText="Schedule Your Call Now"
+          href="https://calendar.app.google/nnHuRJxv9dtGum4P7"
+          external
           backgroundVideo="https://lnszbxtpcfdmn5vu.public.blob.vercel-storage.com/cta-1.mp4"
         />
         <BenefitsSection />
@@ -40,7 +42,9 @@ export function LandingPage({ latestArticles }: LandingPageProps) {
         <CTABanner
           headline="Ready to Upgrade Your Life & Bank Account?"
           subtext="The only thing between you and your dream life is one phone call."
-          buttonText="Call Now"
+          buttonText="Book Your Free Call"
+          href="https://calendar.app.google/nnHuRJxv9dtGum4P7"
+          external
           backgroundImage="/images/cta-luxury.jpg"
         />
         <ContactSection />

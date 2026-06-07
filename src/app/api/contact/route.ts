@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validation";
 import { sendNotificationEmail, sendConfirmationEmail } from "@/lib/email";
 
+const WEB3FORMS_ACCESS_KEY = "dead971b-0623-4ec6-8991-143b7a967ffb";
+
 const rateLimitMap = new Map<string, number>();
 
 export async function POST(request: NextRequest) {
@@ -32,11 +34,31 @@ export async function POST(request: NextRequest) {
 
     const { name, email, phone, message } = result.data;
 
-    // Send notification to Bedrock team
-    await sendNotificationEmail({ name, email, phone, message });
+    // Submit to Web3Forms
+    const web3formsResponse = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: `New Inquiry from ${name}`,
+        from_name: "Get Paid Nation",
+        name,
+        email,
+        phone,
+        message,
+      }),
+    });
 
-    // Send confirmation to applicant
-    await sendConfirmationEmail({ name, email });
+    if (!web3formsResponse.ok) {
+      console.error("Web3Forms submission failed:", await web3formsResponse.text());
+      throw new Error("Form submission failed");
+    }
+
+    // Send Resend emails as backup notifications
+    await Promise.allSettled([
+      sendNotificationEmail({ name, email, phone, message }),
+      sendConfirmationEmail({ name, email }),
+    ]);
 
     // Update rate limit
     rateLimitMap.set(ip, now);

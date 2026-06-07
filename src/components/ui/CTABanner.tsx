@@ -9,6 +9,7 @@ interface CTABannerProps {
   subtext?: string;
   buttonText?: string;
   href?: string;
+  external?: boolean;
   backgroundImage?: string;
   backgroundVideo?: string;
 }
@@ -18,6 +19,7 @@ export function CTABanner({
   subtext,
   buttonText = "Book Your Free Call",
   href = "#contact",
+  external = false,
   backgroundImage,
   backgroundVideo,
 }: CTABannerProps) {
@@ -82,6 +84,7 @@ export function CTABanner({
         >
           <a
             href={href}
+            {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             className={`inline-flex items-center gap-2 rounded-lg px-10 py-5 text-lg font-bold uppercase tracking-wide transition-colors ${
               hasMedia
                 ? "bg-tan text-white hover:bg-tan-light"

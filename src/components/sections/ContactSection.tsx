@@ -4,11 +4,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "motion/react";
-import { Phone, Send, CheckCircle, AlertCircle } from "lucide-react";
+import { Phone, Send, CheckCircle, AlertCircle, Calendar } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { Button } from "@/components/ui/Button";
 import { contactFormSchema, type ContactFormSchema } from "@/lib/validation";
+
+const CALENDAR_URL = "https://calendar.app.google/nnHuRJxv9dtGum4P7";
 
 export function ContactSection() {
   const [submitStatus, setSubmitStatus] = useState<
@@ -87,7 +89,22 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col gap-4"
           >
+            <a
+              href={CALENDAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-xl bg-tan px-8 py-5 text-white transition-colors hover:bg-tan-light"
+            >
+              <Calendar className="h-6 w-6" />
+              <div>
+                <p className="text-sm text-white/70">Book online</p>
+                <p className="text-xl font-semibold">
+                  Schedule Your Call
+                </p>
+              </div>
+            </a>
             <a
               href="tel:9362433181"
               className="inline-flex items-center gap-3 rounded-xl border-2 border-tan bg-tan/5 px-8 py-5 transition-colors hover:bg-tan/10"
@@ -121,9 +138,18 @@ export function ContactSection() {
                 We&apos;ve received your inquiry and will be in touch within 1-2
                 business days.
               </p>
+              <a
+                href={CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-tan px-6 py-3 font-semibold text-white transition-colors hover:bg-tan-light"
+              >
+                <Calendar className="h-5 w-5" />
+                Book Your Call Now
+              </a>
               <Button
                 variant="outline"
-                className="mt-6"
+                className="mt-3"
                 onClick={() => setSubmitStatus("idle")}
               >
                 Submit Another Inquiry
