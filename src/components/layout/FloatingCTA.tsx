@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Phone } from "lucide-react";
+import { trackFbEvent } from "@/lib/fbq";
 
 export function FloatingCTA() {
   const [visible, setVisible] = useState(false);
@@ -22,6 +23,7 @@ export function FloatingCTA() {
         {visible && (
           <motion.a
             href="tel:9362433181"
+            onClick={() => trackFbEvent("Contact")}
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -47,6 +49,7 @@ export function FloatingCTA() {
           >
             <a
               href="tel:9362433181"
+              onClick={() => trackFbEvent("Contact")}
               className="flex items-center justify-center gap-2 bg-tan py-5 font-bold uppercase tracking-wide text-white shadow-[0_-4px_12px_rgba(0,0,0,0.1)]"
               aria-label="Call Get Paid Nation"
             >

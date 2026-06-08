@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Phone } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { trackFbEvent } from "@/lib/fbq";
 
 const CALENDAR_URL = "https://calendar.app.google/nnHuRJxv9dtGum4P7";
 
@@ -66,6 +67,7 @@ export function Header() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackFbEvent("Lead")}
                 className="rounded-lg bg-tan px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:bg-tan-light"
               >
                 {link.label}
@@ -87,6 +89,7 @@ export function Header() {
           )}
           <a
             href="tel:9362433181"
+            onClick={() => trackFbEvent("Contact")}
             className={cn(
               "flex items-center gap-1.5 text-sm font-medium transition-colors",
               scrolled ? "text-dark-green hover:text-tan" : "text-white/90 hover:text-white"
@@ -134,7 +137,7 @@ export function Header() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={() => { setMobileMenuOpen(false); trackFbEvent("Lead"); }}
                     className="rounded-lg bg-tan px-8 py-4 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:bg-tan-light"
                   >
                     {link.label}
@@ -152,6 +155,7 @@ export function Header() {
               )}
               <a
                 href="tel:9362433181"
+                onClick={() => trackFbEvent("Contact")}
                 className="flex items-center gap-2 text-lg font-medium text-dark-green hover:text-tan"
               >
                 <Phone className="h-5 w-5" />

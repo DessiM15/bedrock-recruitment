@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { trackFbEvent } from "@/lib/fbq";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -54,6 +57,7 @@ export function Footer() {
               <li>
                 <a
                   href="tel:9362433181"
+                  onClick={() => trackFbEvent("Contact")}
                   className="flex items-center gap-2 text-sm text-cream/70 transition-colors hover:text-tan"
                 >
                   <Phone className="h-4 w-4 shrink-0" />

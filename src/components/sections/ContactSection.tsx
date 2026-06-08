@@ -9,6 +9,7 @@ import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { Button } from "@/components/ui/Button";
 import { contactFormSchema, type ContactFormSchema } from "@/lib/validation";
+import { trackFbEvent } from "@/lib/fbq";
 
 const CALENDAR_URL = "https://calendar.app.google/nnHuRJxv9dtGum4P7";
 
@@ -44,6 +45,7 @@ export function ContactSection() {
       }
 
       setSubmitStatus("success");
+      trackFbEvent("Lead");
       reset();
     } catch (err) {
       setSubmitStatus("error");
@@ -95,6 +97,7 @@ export function ContactSection() {
               href={CALENDAR_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackFbEvent("Lead")}
               className="inline-flex items-center gap-3 rounded-xl bg-tan px-8 py-5 text-white transition-colors hover:bg-tan-light"
             >
               <Calendar className="h-6 w-6" />
@@ -107,6 +110,7 @@ export function ContactSection() {
             </a>
             <a
               href="tel:9362433181"
+              onClick={() => trackFbEvent("Contact")}
               className="inline-flex items-center gap-3 rounded-xl border-2 border-tan bg-tan/5 px-8 py-5 transition-colors hover:bg-tan/10"
             >
               <Phone className="h-6 w-6 text-tan" />
@@ -142,6 +146,7 @@ export function ContactSection() {
                 href={CALENDAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackFbEvent("Lead")}
                 className="mt-6 inline-flex items-center gap-2 rounded-lg bg-tan px-6 py-3 font-semibold text-white transition-colors hover:bg-tan-light"
               >
                 <Calendar className="h-5 w-5" />

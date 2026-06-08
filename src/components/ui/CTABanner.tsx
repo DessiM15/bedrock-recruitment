@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { trackFbEvent } from "@/lib/fbq";
 
 interface CTABannerProps {
   headline: string;
@@ -85,6 +86,7 @@ export function CTABanner({
           <a
             href={href}
             {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            onClick={() => trackFbEvent("Lead")}
             className={`inline-flex items-center gap-2 rounded-lg px-10 py-5 text-lg font-bold uppercase tracking-wide transition-colors ${
               hasMedia
                 ? "bg-tan text-white hover:bg-tan-light"
