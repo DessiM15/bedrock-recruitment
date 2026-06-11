@@ -2,19 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { trackFbEvent } from "@/lib/fbq";
-
-const CALENDAR_URL = "https://calendar.app.google/nnHuRJxv9dtGum4P7";
 
 const navLinks = [
   { href: "/#why-bedrock", label: "The Opportunity" },
   { href: "/#benefits", label: "Benefits" },
   { href: "/#team", label: "Team" },
   { href: "/blog", label: "Blog" },
-  { href: CALENDAR_URL, label: "Schedule Your Call", external: true },
+  { href: "/#contact", label: "Schedule Your Call", cta: true },
 ];
 
 export function Header() {
@@ -61,12 +59,10 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) =>
-            link.external ? (
+            link.cta ? (
               <a
                 key={link.href}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={() => trackFbEvent("Lead")}
                 className="rounded-lg bg-tan px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:bg-tan-light"
               >
@@ -87,18 +83,6 @@ export function Header() {
               </Link>
             )
           )}
-          <a
-            href="tel:9362433181"
-            onClick={() => trackFbEvent("Contact")}
-            className={cn(
-              "flex items-center gap-1.5 text-sm font-medium transition-colors",
-              scrolled ? "text-dark-green hover:text-tan" : "text-white/90 hover:text-white"
-            )}
-            aria-label="Call (936) 243-3181"
-          >
-            <Phone className="h-4 w-4" />
-            <span className="hidden lg:inline">(936) 243-3181</span>
-          </a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -131,12 +115,10 @@ export function Header() {
           >
             <div className="flex flex-col items-center gap-6">
               {navLinks.map((link) =>
-                link.external ? (
+                link.cta ? (
                   <a
                     key={link.href}
                     href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     onClick={() => { setMobileMenuOpen(false); trackFbEvent("Lead"); }}
                     className="rounded-lg bg-tan px-8 py-4 text-lg font-bold uppercase tracking-wide text-white transition-colors hover:bg-tan-light"
                   >
@@ -153,14 +135,6 @@ export function Header() {
                   </Link>
                 )
               )}
-              <a
-                href="tel:9362433181"
-                onClick={() => trackFbEvent("Contact")}
-                className="flex items-center gap-2 text-lg font-medium text-dark-green hover:text-tan"
-              >
-                <Phone className="h-5 w-5" />
-                (936) 243-3181
-              </a>
             </div>
           </motion.div>
         )}

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Phone } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { trackFbEvent } from "@/lib/fbq";
 
 export function FloatingCTA() {
@@ -22,17 +22,17 @@ export function FloatingCTA() {
       <AnimatePresence>
         {visible && (
           <motion.a
-            href="tel:9362433181"
-            onClick={() => trackFbEvent("Contact")}
+            href="#contact"
+            onClick={() => trackFbEvent("Lead")}
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3 }}
             className="fixed bottom-6 right-6 z-50 hidden items-center gap-2 rounded-lg bg-tan px-6 py-4 font-bold uppercase tracking-wide text-white shadow-lg transition-colors hover:bg-tan-light md:flex"
-            aria-label="Call Get Paid Nation at (936) 243-3181"
+            aria-label="Book a call with Get Paid Nation"
           >
-            <Phone className="h-5 w-5" />
-            <span className="text-sm font-bold">(936) 243-3181</span>
+            <Calendar className="h-5 w-5" />
+            <span className="text-sm font-bold">Book a Call</span>
           </motion.a>
         )}
       </AnimatePresence>
@@ -48,13 +48,13 @@ export function FloatingCTA() {
             className="fixed inset-x-0 bottom-0 z-50 md:hidden"
           >
             <a
-              href="tel:9362433181"
-              onClick={() => trackFbEvent("Contact")}
+              href="#contact"
+              onClick={() => trackFbEvent("Lead")}
               className="flex items-center justify-center gap-2 bg-tan py-5 font-bold uppercase tracking-wide text-white shadow-[0_-4px_12px_rgba(0,0,0,0.1)]"
-              aria-label="Call Get Paid Nation"
+              aria-label="Book a call with Get Paid Nation"
             >
-              <Phone className="h-5 w-5" />
-              <span className="font-medium">Call Now — (936) 243-3181</span>
+              <Calendar className="h-5 w-5" />
+              <span className="font-medium">Book a Call</span>
             </a>
           </motion.div>
         )}

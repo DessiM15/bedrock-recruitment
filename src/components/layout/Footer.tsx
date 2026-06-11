@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
-import { trackFbEvent } from "@/lib/fbq";
+import { Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -54,16 +53,6 @@ export function Footer() {
               Get in Touch
             </h3>
             <ul className="space-y-3">
-              <li>
-                <a
-                  href="tel:9362433181"
-                  onClick={() => trackFbEvent("Contact")}
-                  className="flex items-center gap-2 text-sm text-cream/70 transition-colors hover:text-tan"
-                >
-                  <Phone className="h-4 w-4 shrink-0" />
-                  (936) 243-3181
-                </a>
-              </li>
               <li>
                 <a
                   href="mailto:info@bedrockfinancialplanning.com"
