@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "motion/react";
@@ -11,11 +11,18 @@ import { Button } from "@/components/ui/Button";
 import { contactFormSchema, type ContactFormSchema } from "@/lib/validation";
 import { trackFbEvent } from "@/lib/fbq";
 
+// Web3Forms rejects server-side calls on the free plan, so this submits
+// straight from the browser. Their access keys are public by design.
+const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ??
+  "220998f7-021b-4e70-8108-ad330cf20c39";
+
 export function ContactSection() {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const botcheckRef = useRef<HTMLInputElement>(null);
 
   const {
     register,
@@ -31,16 +38,33 @@ export function ContactSection() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Inquiry from ${data.name}`,
+          from_name: "Get Paid Nation",
+          botcheck: botcheckRef.current?.checked ? "true" : "",
+          ...data,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Something went wrong");
+      }
+
+      // Backup notification via Resend, if configured. Never blocks the user.
+      fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        const result = await response.json();
-        throw new Error(result.error || "Something went wrong");
-      }
+      }).catch(() => {});
 
       setSubmitStatus("success");
       trackFbEvent("Lead");
@@ -117,6 +141,17 @@ export function ContactSection() {
               <h3 className="mb-6 font-serif text-2xl font-semibold">
                 Tell Us About Yourself
               </h3>
+
+              {/* Honeypot — hidden from users, bots that tick it are rejected */}
+              <input
+                ref={botcheckRef}
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
 
               <div className="space-y-5">
                 <div>
