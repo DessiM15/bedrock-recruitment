@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getPublishedArticles } from "@/lib/articles";
 
-const BASE_URL = "https://bedrockfinancialplanning.com";
+const BASE_URL = "https://getpaidnation.community";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const articles = getPublishedArticles();
