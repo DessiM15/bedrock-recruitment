@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validation";
 import { sendNotificationEmail, sendConfirmationEmail } from "@/lib/email";
 
-const WEB3FORMS_ACCESS_KEY = "dead971b-0623-4ec6-8991-143b7a967ffb";
+const WEB3FORMS_ACCESS_KEY =
+  process.env.WEB3FORMS_ACCESS_KEY ?? "220998f7-021b-4e70-8108-ad330cf20c39";
 
 const rateLimitMap = new Map<string, number>();
 
